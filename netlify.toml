@@ -1,5 +1,5 @@
 [build]
-  base = "dist"
+  base = ".next"
   command = "npm run build"
   publish = "eduardogc.dev"
 
