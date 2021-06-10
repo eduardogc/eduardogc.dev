@@ -1,7 +1,6 @@
 [build]
-  base = ".next"
   command = "npm run build"
-  publish = "eduardogc.dev"
+  publish = "out"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
