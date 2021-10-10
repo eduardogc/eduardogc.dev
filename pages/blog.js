@@ -14,8 +14,8 @@ const Blog = ({ posts}) => {
             )
             .map((post) => {
               return (
-                <div key={post.slug} class="blogs bg-white mr-5">
-                  <img src="https://images.unsplash.com/photo-1489396160836-2c99c977e970?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
+                <div key={post.slug} class="bg-white mr-5 w-full">
+                  <img src={post.frontMatter.thumbnail} className="max-h-52 object-cover w-full" />
                   <div class="p-5">
                   <h1 class="text-2xl font-bold text-green-800 py-2">
                     <Link href={{ pathname: `/posts/${post.slug}` }}>

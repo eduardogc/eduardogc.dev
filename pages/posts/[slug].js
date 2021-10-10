@@ -9,11 +9,8 @@ const Content = ({ content, data }) => {
       diaF = (dia.length == 1) ? '0' + dia : dia,
       mes = (data.getMonth() + 1).toString(), //+1 pois no getMonth Janeiro começa com zero.
       mesF = (mes.length == 1) ? '0' + mes : mes,
-      anoF = data.getFullYear(),
-      hours = data.getHours(),
-      minutes = data.getMinutes(),
-      seconds = data.getSeconds();
-    return `${diaF}/${mesF}/${anoF} ${hours}:${minutes}:${seconds}`;
+      anoF = data.getFullYear();
+    return `${diaF}/${mesF}/${anoF}`;
   }
 
   return (
@@ -23,7 +20,7 @@ const Content = ({ content, data }) => {
         <div className="max-w-6xl px-10 py-6 mx-auto bg-gray-50">
 
           <a href="#_" className="block transition duration-200 ease-out transform hover:scale-110">
-            <img className="object-cover w-full shadow-sm h-full" src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80" />
+            <img className="object-cover w-full shadow-sm h-full" src={`https://eduardogc.dev/${frontmatter.thumbnail}`} />
           </a>
 
           <div className="flex items-center justify-start mt-4 mb-4">
