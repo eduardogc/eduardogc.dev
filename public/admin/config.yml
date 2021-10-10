@@ -9,16 +9,13 @@ display_url: https://eduardogc.dev/blog
 collections:
   - name: "Blog em português"
     label: "posts_portugues"
-    collections:
-      - label: "Blog"
-        name: "blog"
-        folder: "_posts"
-        create: true
-        filter: {field: "language", value: "pt-br"}
-        fields:
-          - {label: "Language", name: "language", widget: "select", options: ["en", "pt-br"]}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Content", name: "body", widget: "markdown"}
+    folder: "_posts"
+    create: true
+    filter: {field: "language", value: "pt-br"}
+    fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "pt-br"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
   - label: "Blog in English"
     name: "english_posts"
     folder: "_posts"
