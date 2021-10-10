@@ -1,13 +1,12 @@
 module.exports = {
     target: 'serverless',
-    webpack: (cfg) => {
-        cfg.module.rules.push(
+    webpack: (config) => {
+        config.module.rules.push(
             {
                 test: /\.md$/,
-                loader: 'frontmatter-markdown-loader',
-                options: { mode: ['react-component'] }
+                loader: 'raw-loader',
             }
         )
-        return cfg;
+        return config;
     }
 };
