@@ -1,8 +1,7 @@
-import react from "react";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 
-const Blog = ({ content, data }) => {
+const Content = ({ content, data }) => {
   const frontmatter = data;
   const formatDate = (date) => {
     const data = new Date(date),
@@ -98,9 +97,9 @@ const Blog = ({ content, data }) => {
   );
 };
 
-export default Blog;
+export default Content;
 
-Blog.getInitialProps = async (context) => {
+Content.getInitialProps = async (context) => {
   const { slug } = context.query;
   const content = await import(`../../content/pt-br/${slug}.md`);
   const data = matter(content.default);

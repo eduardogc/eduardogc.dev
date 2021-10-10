@@ -1,5 +1,5 @@
 backend:
-  name: test-local
+  name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 publish_mode: editorial_workflow
 media_folder: public/img
@@ -15,9 +15,10 @@ collections:
     fields:
       - {label: "Language", name: "language", widget: "select", options: ["en", "pt-br"]}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Publish Date", name: "date", widget: "datetime", date_format: "DD/MM/YYYY"}
       - {label: "Post author", name: "author", widget: "select", options: ["Eduardo GC"]}
       - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", choose_url: true}
   - label: "Blog in English"
     name: "english_posts"
     folder: "content/en"
@@ -26,6 +27,7 @@ collections:
     fields:
       - {label: "Language", name: "language", widget: "select", options: ["en", "pt-br"]}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Publish Date", name: "date", widget: "datetime", date_format: "DD/MM/YYYY"}
       - {label: "Post author", name: "author", widget: "select", options: ["Eduardo GC"]}
       - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", choose_url: true}

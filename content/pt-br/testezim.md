@@ -1,6 +1,10 @@
 ---
 language: pt-br
 title: Testezim
-date: 2021-10-10T16:16:15.768Z
+date: 10/10/2021
+description: Esse é o canalzim de teste.
+tags:
+    - teste
+    - react
 ---
 Testezim bruto

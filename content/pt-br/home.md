@@ -1,12 +1,11 @@
 ---
 language: pt-br
 title: Teste de Blog
-date: 2021-10-10T16:16:15.768Z
-cats:
-  - description: Maru is a Scottish Fold from Japan, and he loves boxes.
-    name: Maru (まる)
-  - description: Grumpy cat is an American celebrity cat known for her grumpy appearance.
-    name: Grumpy cat (Tardar Sauce)
+date: 09/10/2021
+description: Um teste singelo de blog.
+tags:
+  - teste
+  - react
 author: Eduardo GC
 ---
 ## Welcome to my awesome page about cats of the internet.
