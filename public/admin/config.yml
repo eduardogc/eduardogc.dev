@@ -7,9 +7,9 @@ public_folder: img
 site_url: https://eduardogc.dev/blog
 display_url: https://eduardogc.dev/blog
 collections:
-  - name: "Blog em português"
-    label: "posts_portugues"
-    folder: "_posts"
+  - label: "Blog em português"
+    name: "posts_portugues"
+    folder: "content/pt-br"
     create: true
     filter: {field: "language", value: "pt-br"}
     fields:
@@ -18,7 +18,7 @@ collections:
       - {label: "Content", name: "body", widget: "markdown"}
   - label: "Blog in English"
     name: "english_posts"
-    folder: "_posts"
+    folder: "content/en"
     create: true
     filter: {field: "language", value: "en"}
     fields:
