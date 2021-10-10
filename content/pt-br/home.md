@@ -7,6 +7,7 @@ tags:
   - teste
   - react
 author: Eduardo GC
+thumbnail: img/cachorro.jpeg
 ---
 ## Welcome to my awesome page about cats of the internet.
 
