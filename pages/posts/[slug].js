@@ -90,6 +90,8 @@ const Content = ({ content, data }) => {
 
         </div>
       </div>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8355478857108657"
+     crossorigin="anonymous"></script>
     </div>
   );
 };

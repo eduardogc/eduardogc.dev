@@ -152,6 +152,8 @@ export default function Home() {
             </a></li>
           </ul>
           <div className="powered-by-shorby">EDUARDOGC.DEV</div>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8355478857108657"
+     crossorigin="anonymous"></script>
         </div>
       </main>
 
