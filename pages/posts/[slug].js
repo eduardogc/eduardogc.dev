@@ -36,7 +36,7 @@ const Content = ({ content, data }) => {
 
               <a href="#" className="flex items-center mt-6 mb-6">
                 <img src="https://avatars.githubusercontent.com/u/71964085?v=4"
-                alt="avatar" className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block" />
+                  alt="avatar" className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block" />
                 <h1 className="font-bold text-gray-700 hover:underline">Por {frontmatter.author} <ReactMarkdown className="text-sm">{formatDate(frontmatter.date)}</ReactMarkdown></h1>
               </a>
             </div>
@@ -59,6 +59,17 @@ const Content = ({ content, data }) => {
             </form>
           </div>
         </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8355478857108657"
+          crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-8355478857108657"
+          data-ad-slot="8703968093"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({ });
+        </script>
 
         <div className="max-w-4xl px-10 py-16 mx-auto bg-gray-100  bg-white min-w-screen animation-fade animation-delay  px-0 px-8 mx-auto sm:px-12 xl:px-5">
 
@@ -90,8 +101,6 @@ const Content = ({ content, data }) => {
 
         </div>
       </div>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8355478857108657"
-     crossorigin="anonymous"></script>
     </div>
   );
 };

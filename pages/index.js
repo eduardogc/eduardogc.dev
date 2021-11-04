@@ -39,9 +39,9 @@ export default function Home() {
                 </svg>
                 <span>[POR TEMPO LIMITADO] Compre BDM Digital com uma mega bonificação!</span></div>
               </a> */}
-              </li>
+            </li>
             <li id="block1" className="links-block">
-            <a href="https://amzn.to/3gen8Jz" title="[POR TEMPO LIMITADO] Kindle Preto com desconto!"
+              <a href="https://amzn.to/3gen8Jz" title="[POR TEMPO LIMITADO] Kindle Preto com desconto!"
                 className="block-item layout-button" target="_blank">
                 <div className="block-content"><svg aria-hidden="true" focusable="false" data-prefix="fab"
                   data-icon="amazon" className="svg-inline--fa fa-amazon fa-w-14 fa-block-icon" role="img"
@@ -53,7 +53,7 @@ export default function Home() {
               </a>
             </li>
             <li id="block2" className="links-block">
-            <a href="https://amzn.to/3ivOQTD" title="[POR TEMPO LIMITADO] Kindle Branco com desconto!"
+              <a href="https://amzn.to/3ivOQTD" title="[POR TEMPO LIMITADO] Kindle Branco com desconto!"
                 className="block-item layout-button" target="_blank">
                 <div className="block-content"><svg aria-hidden="true" focusable="false" data-prefix="fab"
                   data-icon="amazon" className="svg-inline--fa fa-amazon fa-w-14 fa-block-icon" role="img"
@@ -111,10 +111,23 @@ export default function Home() {
               style={{ backgroundImage: `url('https://i.ytimg.com/vi/iH7jcznbU3c/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLCL0CDOYk_JvqgpEoG_0oHREkn-Vw&amp;days_since_epoch=18786')` }}>
               <div className="block-content">
                 <div>PLAYLIST</div><strong className="block-label" style={{ backgroundColor: '#ffde59' }}>PRODUTOS
-                            DIGITAIS</strong>
+                  DIGITAIS</strong>
               </div>
             </a></li>
           </ul>
+
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8355478857108657"
+            crossorigin="anonymous"></script>
+          <ins class="adsbygoogle"
+            style="display:block; text-align:center;"
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client="ca-pub-8355478857108657"
+            data-ad-slot="1507186115"></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({ });
+          </script>
+
           <ul className="social-links blocks-num-3">
             <li className="social-item"><a href="https://www.instagram.com/eduardogc.dev/" title="Instagram" target="_blank"><svg
               aria-labelledby="svg-inline--fa-title-kjRQDSWdnHFf" data-prefix="fab" data-icon="instagram"
@@ -152,8 +165,6 @@ export default function Home() {
             </a></li>
           </ul>
           <div className="powered-by-shorby">EDUARDOGC.DEV</div>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8355478857108657"
-     crossorigin="anonymous"></script>
         </div>
       </main>
 
