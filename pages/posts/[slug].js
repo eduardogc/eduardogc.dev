@@ -62,7 +62,7 @@ const Content = ({ content, data }) => {
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8355478857108657"
           crossorigin="anonymous"></script>
         <ins class="adsbygoogle"
-          style="display:block"
+          style={{ display: "block" }}
           data-ad-client="ca-pub-8355478857108657"
           data-ad-slot="8703968093"
           data-ad-format="auto"
