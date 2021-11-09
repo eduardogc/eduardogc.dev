@@ -10,6 +10,7 @@ export default function Home() {
         <meta property="og:type" content="article" />
         <meta property="og:image" content="https://sn3301files.storage.live.com/y4mVAlAPBqzCKKcVhq_gxzLDd9MPrh_QzMBbMLFaEvnGaYSJzb7dnoW1C3HaHLBugvBw0t_X2MjkKTroKx2ee31pz30mpuI1AZmDb4QD87Il_hENDhLZvRc2GuDJtbg1IwYoM2MeiZA9POSnTFqsran3Y-yTnOjYXZ2kn-jwU8lNYlEy9oN5mCMH_8B-5iQC-PR?width=1920&height=1080&cropmode=none" />
         <meta property="og:title" content="Eduardo GC" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8355478857108657" crossorigin="anonymous"></script>
       </Head>
 
       <main className="theme-12 12-theme">
