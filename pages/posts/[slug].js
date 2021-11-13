@@ -1,8 +1,13 @@
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
+import Head from 'next/head'
+import { useEffect, useState } from "react";
 
 const Content = ({ content, data }) => {
+
+  const [siteURL, setSiteURL] = useState('')
   const frontmatter = data;
+
   const formatDate = (date) => {
     const data = new Date(date),
       dia = data.getDate().toString(),
@@ -13,95 +18,200 @@ const Content = ({ content, data }) => {
     return `${diaF}/${mesF}/${anoF}`;
   }
 
+  if (process.browser) {
+    var h = document.documentElement,
+      b = document.body,
+      st = 'scrollTop',
+      sh = 'scrollHeight',
+      progress = document.querySelector('#progress'),
+      scroll;
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+
+    document.addEventListener('scroll', function () {
+
+      /*Refresh scroll % width*/
+      scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+      progress.style.setProperty('--scroll', scroll + '%');
+
+      /*Apply classes for slide in bar*/
+      scrollpos = window.scrollY;
+
+      if (scrollpos > 100) {
+        header.classList.remove("hidden");
+        header.classList.remove("fadeOutUp");
+        header.classList.add("slideInDown");
+      } else {
+        header.classList.remove("slideInDown");
+        header.classList.add("fadeOutUp");
+        header.classList.add("hidden");
+      }
+    });
+  }
+
+  function readingTime() {
+    if (process.browser) {
+      const text = document.getElementById("blog-main-content").innerText;
+      const wpm = 225;
+      const words = text.trim().split(/\s+/).length;
+      const time = Math.ceil(words / wpm);
+      return time
+    } else {
+      return 0;
+    }
+  }
+
+  useEffect(() => {
+    var disqus_config = function () {
+      this.page.url = window.location.href;
+      this.page.identifier = '12156509-0d21-4da7-8422-1e8e34fa7fc0';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eduardogc-dev.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+    setSiteURL(window.location.href)
+  }, [])
+
+  const customCSS = `.smooth {transition: box-shadow 0.3s ease-in-out;}
+  ::selection{background - color: aliceblue}`
+
   return (
-    <div className="mt-6 bg-gray-50">
-      <div className=" px-10 py-6 mx-auto">
+    <>
+      <Head>
+        <meta charSset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>{frontmatter.title}</title>
+        <meta name="author" content="name" />
+        <meta name="description" content="description here" />
+        <meta name="keywords" content="keywords,here" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet" />
+        <style>
+          {customCSS}
+        </style>
+      </Head>
+      <div className="bg-white font-sans leading-normal tracking-normal">
 
-        <div className="max-w-6xl px-10 py-6 mx-auto bg-gray-50">
-
-          <a href="#_" className="block transition duration-200 ease-out transform hover:scale-110">
-            <img className="object-cover w-full shadow-sm h-full" src={`https://eduardogc.dev/${frontmatter.thumbnail}`} />
-          </a>
-
-          <div className="flex items-center justify-start mt-4 mb-4">
-            <a href="#" className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500 mr-4">Django</a>
-            <a href="#" className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500 mr-4">Python</a>
-            <a href="#" className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500">web development</a>
-          </div>
-          <div className="mt-2">
-            <a href="#"
-              className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-purple-500  hover:underline">{frontmatter.title}</a>
-
-            <div className="font-light text-gray-600">
-
-              <a href="#" className="flex items-center mt-6 mb-6">
-                <img src="https://avatars.githubusercontent.com/u/71964085?v=4"
-                  alt="avatar" className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block" />
-                <h1 className="font-bold text-gray-700 hover:underline">Por {frontmatter.author} <ReactMarkdown className="text-sm">{formatDate(frontmatter.date)}</ReactMarkdown></h1>
+        <nav className="bg-gray-900 p-4 mt-0 w-full">
+          <div className="container mx-auto flex items-center">
+            <div className="flex text-white font-extrabold">
+              <a className="flex text-white text-base no-underline hover:text-white hover:no-underline" href="#">
+                📝 <span className="hidden w-0 md:w-auto md:block pl-1">Eduardo GC Blog</span>
               </a>
             </div>
+            <div className="flex pl-4 text-sm">
+              <ul className="list-reset flex justify-between flex-1 md:flex-none items-center">
+                <li className="mr-2">
+                  <a className="inline-block py-2 px-2 text-white no-underline" href="index.html">🏠 Home</a>
+                </li>
+                <li className="mr-2">
+                  <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2" href="#">Programação</a>
+                </li>
+                <li className="mr-2">
+                  <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2" href="#">Tutoriais</a>
+                </li>
+                <li className="mr-2">
+                  <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2" href="#">Reflexões</a>
+                </li>
+              </ul>
+            </div>
           </div>
+        </nav>
 
-          <div className="max-w-4xl px-10  mx-auto text-2xl text-gray-700 mt-4 rounded bg-gray-100">
-            <div>
-              <p className="mt-2 p-8"><ReactMarkdown escapeText="html">{content}</ReactMarkdown></p>
+        <div id="header" className="bg-white fixed w-full z-10 top-0 hidden animated" style={{ opacity: .95 }}>
+          <div className="bg-white">
+            <div className="flex flex-wrap items-center content-center">
+              <div className="flex w-1/2 justify-start text-white font-extrabold">
+                <a className="flex text-gray-900 no-underline hover:text-gray-900 hover:no-underline pl-2" href="#">
+                  📝 <span className="hidden w-0 md:w-auto md:block pl-1">Eduardo GC Blog</span>
+                </a>
+              </div>
+              <div className="flex w-1/2 justify-end content-center">
+                <p className="hidden sm:block mr-3 text-center h-14 p-4 text-xs"><span className="pr-2">Compartilhe</span> 👉</p>
+                <a className="inline-block text-white no-underline hover:text-white hover:text-underline text-center h-10 w-10 p-2 md:h-auto md:w-16 md:p-4" href={`https://twitter.com/intent/tweet?url=${siteURL}`} style={{ backgroundColor: '#33b1ff' }}>
+                  <svg className="fill-current text-white h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+                </a>
+                <a className="inline-block text-white no-underline hover:text-white hover:text-underline text-center h-10 w-10 p-2 md:h-auto md:w-16 md:p-4" href={`https://twitter.com/intent/tweet?url=${siteURL}`} style={{ backgroundColor: '#005e99' }}>
+                  <svg className="fill-current text-white h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+          <div id="progress" className="h-1 bg-white shadow" style={{ background: 'linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0)' }}></div>
+        </div>
+
+        <div className="text-center pt-16 md:pt-32">
+          <p className="text-sm md:text-base text-green-500 font-bold">{formatDate(frontmatter.date)}</p>
+          <h1 className="font-bold break-normal text-3xl md:text-5xl">{frontmatter.title}</h1>
+          <span className="text-sm">⏱ Tempo de leitura: {readingTime()} min</span>
+        </div>
+
+        <div className="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" style={{ backgroundImage: `url(https://eduardogc.dev/${frontmatter.thumbnail})`, height: '75vh' }}></div>
+
+        <div className="container max-w-5xl mx-auto -mt-32">
+
+          <div className="mx-0 sm:mx-6">
+
+            <div id="blog-main-content" className="bg-white w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal" style={{ fontFamily: 'Georgia,serif' }}>
+              <ReactMarkdown>
+                {content}
+              </ReactMarkdown>
+            </div>
+
+            <div className="flex w-full items-center font-sans p-8 md:p-24">
+              <img className="w-10 h-10 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of Author" />
+              <div className="flex-1">
+                <p className="text-base font-bold text-base md:text-xl leading-none">{frontmatter.author}</p>
+                <p className="text-gray-600 text-xs md:text-base">Um apaixonado por conhecimento compartilhando um pouquinho de sua jornada.</p>
+              </div>
+              <div className="justify-end">
+                <button className="bg-transparent border border-gray-500 hover:border-green-500 text-xs text-gray-500 hover:text-green-500 font-bold py-2 px-4 rounded-full">Saiba mais</button>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="max-w-4xl py-16 xl:px-8 flex justify-center mx-auto">
-
-          <div className="w-full mt-16 md:mt-0 ">
-            <form className="relative z-10 h-auto p-8 py-10 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7">
-              <h3 className="mb-6 text-2xl font-medium text-center">Write a comment</h3>
-              <textarea type="text" name="comment" className="w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" placeholder="Write your comment" rows="5" cols="33"></textarea>
-              <input type="submit" value="Submit comment" name="submit" className=" text-white px-4 py-3 bg-blue-500  rounded-lg" />
-            </form>
-          </div>
+        <div className="container mb-8">
+          <script id="dsq-count-scr" src="//eduardogc-dev.disqus.com/count.js" async></script>
+          <div id="disqus_thread"></div>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </div>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8355478857108657"
-          crossorigin="anonymous"></script>
-        <ins class="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-8355478857108657"
-          data-ad-slot="8703968093"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({ });
-        </script>
 
-        <div className="max-w-4xl px-10 py-16 mx-auto bg-gray-100  bg-white min-w-screen animation-fade animation-delay  px-0 px-8 mx-auto sm:px-12 xl:px-5">
+        <footer className="bg-gray-900">
+          <div className="container max-w-6xl mx-auto flex items-center px-2 py-8">
 
-          <p className="mt-1 text-2xl font-bold text-left text-gray-800 sm:mx-6 sm:text-2xl md:text-3xl lg:text-4xl sm:text-center sm:mx-0">
-            All comments on this post
-          </p>
-          <div className="flex  items-center w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
-
-            <a href="#" className="flex items-center mt-6 mb-6 mr-6"><img src="https://avatars.githubusercontent.com/u/71964085?v=4" alt="avatar" className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block" />
-            </a>
-
-            <div><h3 className="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">By James Amos</h3>
-              <p className="text-sm font-bold text-gray-300">August 22,2021</p>
-              <p className="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
-                Please help with how you did the migrations for the blog database fields.I tried mine using exactly what you instructed but its not working!!.</p>
+            <div className="w-full mx-auto flex flex-wrap items-center">
+              <div className="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold">
+                <a className="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="#">
+                  📝 <span className="text-base text-gray-200">Eduardo GC Blog</span>
+                </a>
+              </div>
+              <div className="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+                <ul className="list-reset flex justify-center flex-1 md:flex-none items-center">
+                  <li>
+                    <a className="inline-block py-2 px-3 text-white no-underline" href="index.html">🏠 Home</a>
+                  </li>
+                  <li>
+                    <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3" href="#">Programação</a>
+                  </li>
+                  <li>
+                    <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3" href="#">Tutoriais</a>
+                  </li>
+                  <li>
+                    <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3" href="#">Reflexões</a>
+                  </li>
+                </ul>
+              </div>
             </div>
+
           </div>
-          <div className="flex  items-center w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
-
-            <a href="#" className="flex items-center mt-6 mb-6 mr-6"><img src="https://avatars.githubusercontent.com/u/71964085?v=4" alt="avatar" className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block" />
-            </a>
-
-            <div><h3 className="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">By James Amos</h3>
-              <p className="text-sm font-bold text-gray-300">August 22,2021</p>
-              <p className="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
-                Especially I dont understand the concepts of multiple models.What really is the difference between the blog model and blogApp model? Am stuck</p>
-            </div>
-          </div>
-
-        </div>
+        </footer>
       </div>
-    </div>
+    </>
   );
 };
 
