@@ -1,10 +1,13 @@
 ---
 language: pt-br
 title: Lorem Ipsum generator
-date: 2021-11-13T20:11:25.070Z
+date: 11/23/2021
 author: Eduardo GC
 thumbnail: img/pexels-lisa-109255.jpg
 authorthumb: img/foto-canal-2.png
+tags:
+  - teste
+  - react
 pageid: 7d2b4eeb-5115-469a-919f-05461fa81865
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada. Morbi tristique senectus et netus et malesuada fames. Nunc mattis enim ut tellus elementum sagittis. Platea dictumst quisque sagittis purus sit amet volutpat consequat mauris. Mi in nulla posuere sollicitudin. Egestas fringilla phasellus faucibus scelerisque eleifend donec. Aliquet nibh praesent tristique magna sit amet purus gravida quis. In iaculis nunc sed augue lacus viverra. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.

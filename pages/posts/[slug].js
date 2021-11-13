@@ -158,7 +158,7 @@ const Content = ({ content, data }) => {
             </div>
 
             <div className="flex w-full items-center font-sans p-4 md:p-24">
-              <img className="w-10 h-10 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of Author" />
+              <img className="w-10 h-10 rounded-full mr-4" src={frontmatter.authorthumb} alt="Avatar of Author" />
               <div className="flex-1">
                 <p className="text-base font-bold text-base md:text-xl leading-none">{frontmatter.author}</p>
                 <p className="text-gray-600 text-xs md:text-base">Um apaixonado por conhecimento compartilhando um pouquinho de sua jornada.</p>

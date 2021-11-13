@@ -55,7 +55,7 @@ const Blog = ({ posts }) => {
                         <div className="flex items-center justify-between mt-4"><a href={`/posts/${post.slug}`}
                           className="text-blue-500 hover:underline">Leia mais...</a>
                           <div><a href="#" className="flex items-center"><img
-                            src={post.frontMatter.thumbnail}
+                            src={post.frontMatter.authorthumb}
                             alt="avatar" className="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" />
                             <h1 className="font-bold text-gray-700 hover:underline">{post.frontMatter.author}</h1>
                           </a></div>
