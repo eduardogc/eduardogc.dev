@@ -19,6 +19,8 @@ collections:
       - {label: "Post author", name: "author", widget: "select", options: ["Eduardo GC"]}
       - {label: "Content", name: "body", widget: "markdown"}
       - {label: "Featured Image", name: "thumbnail", widget: "image", choose_url: true}
+      - {label: "Author Image", name: "authorthumb", widget: "image", choose_url: true}
+      - {label: "Page Id", name: "pageid", widget: "string"}
   - label: "Blog in English"
     name: "english_posts"
     folder: "content/en"
@@ -31,3 +33,5 @@ collections:
       - {label: "Post author", name: "author", widget: "select", options: ["Eduardo GC"]}
       - {label: "Content", name: "body", widget: "markdown"}
       - {label: "Featured Image", name: "thumbnail", widget: "image", choose_url: true}
+      - {label: "Author Image", name: "authorthumb", widget: "image", choose_url: true}
+      - {label: "Page Id", name: "pageid", widget: "string"}

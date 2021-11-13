@@ -2,6 +2,8 @@ import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import Head from 'next/head'
 import { useEffect, useState } from "react";
+import { Footer } from "../../components/Footer";
+import { Navbar } from "../../components/Navbar";
 
 const Content = ({ content, data }) => {
 
@@ -93,38 +95,14 @@ const Content = ({ content, data }) => {
           {customCSS}
         </style>
       </Head>
-      <div className="bg-white font-sans leading-normal tracking-normal">
+      <div className="bg-white leading-normal tracking-normal">
 
-        <nav className="bg-gray-900 p-4 mt-0 w-full">
-          <div className="container mx-auto flex items-center">
-            <div className="flex text-white font-extrabold">
-              <a className="flex text-white text-base no-underline hover:text-white hover:no-underline" href="#">
-                📝 <span className="hidden w-0 md:w-auto md:block pl-1">Eduardo GC Blog</span>
-              </a>
-            </div>
-            <div className="flex pl-4 text-sm">
-              <ul className="list-reset flex justify-between flex-1 md:flex-none items-center">
-                <li className="mr-2">
-                  <a className="inline-block py-2 px-2 text-white no-underline" href="index.html">🏠 Home</a>
-                </li>
-                <li className="mr-2">
-                  <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2" href="#">Programação</a>
-                </li>
-                <li className="mr-2">
-                  <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2" href="#">Tutoriais</a>
-                </li>
-                <li className="mr-2">
-                  <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2" href="#">Reflexões</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        <Navbar />
 
         <div id="header" className="bg-white fixed w-full z-10 top-0 hidden animated" style={{ opacity: .95 }}>
           <div className="bg-white">
             <div className="flex flex-wrap items-center content-center">
-              <div className="flex w-1/2 justify-start text-white font-extrabold">
+              <div className="flex w-1/2 justify-start text-white font-bold">
                 <a className="flex text-gray-900 no-underline hover:text-gray-900 hover:no-underline pl-2" href="#">
                   📝 <span className="hidden w-0 md:w-auto md:block pl-1">Eduardo GC Blog</span>
                 </a>
@@ -141,7 +119,7 @@ const Content = ({ content, data }) => {
             </div>
 
           </div>
-          <div id="progress" className="h-1 bg-white shadow" style={{ background: 'linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0)' }}></div>
+          <div id="progress" className="h-1 bg-white shadow" style={{ background: 'linear-gradient(to right, #3F3844 var(--scroll), transparent 0)' }}></div>
         </div>
 
         <div className="text-center pt-16 md:pt-32">
@@ -162,7 +140,7 @@ const Content = ({ content, data }) => {
               </ReactMarkdown>
             </div>
 
-            <div className="flex w-full items-center font-sans p-8 md:p-24">
+            <div className="flex w-full items-center font-sans p-4 md:p-24">
               <img className="w-10 h-10 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of Author" />
               <div className="flex-1">
                 <p className="text-base font-bold text-base md:text-xl leading-none">{frontmatter.author}</p>
@@ -181,35 +159,7 @@ const Content = ({ content, data }) => {
           <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </div>
 
-        <footer className="bg-gray-900">
-          <div className="container max-w-6xl mx-auto flex items-center px-2 py-8">
-
-            <div className="w-full mx-auto flex flex-wrap items-center">
-              <div className="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold">
-                <a className="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="#">
-                  📝 <span className="text-base text-gray-200">Eduardo GC Blog</span>
-                </a>
-              </div>
-              <div className="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
-                <ul className="list-reset flex justify-center flex-1 md:flex-none items-center">
-                  <li>
-                    <a className="inline-block py-2 px-3 text-white no-underline" href="index.html">🏠 Home</a>
-                  </li>
-                  <li>
-                    <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3" href="#">Programação</a>
-                  </li>
-                  <li>
-                    <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3" href="#">Tutoriais</a>
-                  </li>
-                  <li>
-                    <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3" href="#">Reflexões</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );

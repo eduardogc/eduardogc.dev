@@ -42,7 +42,7 @@ export default function Home() {
                 <span>[POR TEMPO LIMITADO] Compre BDM Digital com uma mega bonificação!</span></div>
               </a> */}
             </li>
-            <li id="block1" className="links-block">
+            {/* <li id="block1" className="links-block">
               <a href="https://amzn.to/3gen8Jz" title="[POR TEMPO LIMITADO] Kindle Preto com desconto!"
                 className="block-item layout-button" target="_blank">
                 <div className="block-content"><svg aria-hidden="true" focusable="false" data-prefix="fab"
@@ -65,7 +65,7 @@ export default function Home() {
                   </path>
                 </svg><span>[POR TEMPO LIMITADO] Kindle Branco com desconto!</span></div>
               </a>
-            </li>
+            </li> */}
             <li id="block3" className="links-block">
               <div className="block-item layout-text"></div>
             </li>
