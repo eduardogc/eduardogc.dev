@@ -2,14 +2,20 @@
 language: pt-br
 title: Testezim
 date: 10/10/2021
-description: Esse é o canalzim de teste.
+author: Eduardo GC
+thumbnail: img/pexels-polina-kovaleva-8102004.jpg
+authorthumb: img/foto-canal-2.png
+pageid: 6cd08bff-9444-421d-976e-7bd86012567b
 tags:
   - teste
   - react
-author: Eduardo GC
-thumbnail: img/design-sem-nome.png
+description: Esse é o canalzim de teste.
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quam ex, pellentesque ut ultrices sit amet, euismod id arcu. Cras sapien lacus, bibendum at orci eu, dictum aliquet velit. Maecenas et metus odio. Pellentesque sed quam dignissim, cursus ipsum sed, lobortis arcu. Fusce gravida leo nunc, sed consectetur tellus semper ut. Ut lorem purus, tincidunt et laoreet quis, laoreet vitae leo. Aenean ut aliquam quam. Sed sit amet augue pulvinar, ultrices risus sed, egestas mi. Nunc accumsan nisl eu augue fermentum condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras efficitur faucibus vestibulum. Donec mollis at mauris nec egestas.
+## Para começar eu gosto de um textão rapaiz
+
+`codigo lindo e maravilhoso`
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quam ex, pellentesque ut ultrices sit amet, euismod id arcu. Cras sapien lacus, bibendum at orci eu, dictum aliquet velit. Maecenas et metus odio. Pellentesque sed quam dignissim, cursus ipsum sed, lobortis arcu. Fusce gravida leo nu**nc, sed consectetur tellus semper ut.** Ut lorem purus, tincidunt et laoreet quis, laoreet vitae leo. Aenean ut aliquam quam. Sed sit amet augue pulvinar, ultrices risus sed, egestas mi. Nunc accumsan nisl eu augue fermentum condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras *efficitur faucibus vestibulum*. Donec mollis at mauris nec egestas.
 
 Mauris ullamcorper sed sem at fringilla. Ut pharetra semper sodales. Maecenas et metus neque. Proin quis turpis risus. Mauris at lectus eu dolor pharetra ultrices et nec diam. Nulla rutrum viverra ligula, et aliquam metus ullamcorper quis. Nulla molestie augue non nunc dignissim, et egestas odio aliquam. Curabitur suscipit eleifend sem, ultrices tincidunt tellus tristique quis.
 
