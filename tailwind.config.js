@@ -1,6 +1,6 @@
 module.exports = {
   purge: [
-    './pages/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.js',
   ],
   darkMode: 'class',
   theme: {
