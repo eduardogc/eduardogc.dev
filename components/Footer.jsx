@@ -1,9 +1,9 @@
 export const Footer = () => (
     <footer className="px-6 py-2 text-gray-100 bg-gray-800">
         <div className="container flex flex-col items-center justify-between mx-auto md:flex-row">
-            <p className="mt-2 md:mt-0">© 2021. Todos os direitos reservados.</p>
+            <p className="mt-2 md:mt-0">©{new Date().getFullYear()} Eduardo GC. Todos os direitos reservados.</p>
             <div className="flex mt-4 mb-2 -mx-2 md:mt-0 md:mb-0">
-                <a href="https://www.twitch.tv/geceduardo" target="_blank" className="mx-2 text-gray-100 hover:text-gray-400">
+                <a href="https://www.twitch.tv/geceduardo" target="_blank" className="mx-2 text-gray-100 hover:text-gray-400" rel="noreferrer">
                     <svg viewBox="0 0 512 512"
                         className="w-4 h-4 fill-current">
                         <path
@@ -11,7 +11,7 @@ export const Footer = () => (
                         </path>
                     </svg>
                 </a>
-                <a href="https://www.youtube.com/channel/UC2-FsOpGAR4_Cumpyo30bTQ/" target="_blank" className="mx-2 text-gray-100 hover:text-gray-400">
+                <a href="https://www.youtube.com/channel/UC2-FsOpGAR4_Cumpyo30bTQ/" target="_blank" className="mx-2 text-gray-100 hover:text-gray-400" rel="noreferrer">
                     <svg viewBox="0 0 512 512"
                         className="w-4 h-4 fill-current">
                         <path
@@ -19,7 +19,7 @@ export const Footer = () => (
                         </path>
                     </svg>
                 </a>
-                <a href="https://instagram.com/eduardogc.dev" target="_blank" className="mx-2 text-gray-100 hover:text-gray-400">
+                <a href="https://instagram.com/geceduardo" target="_blank" className="mx-2 text-gray-100 hover:text-gray-400" rel="noreferrer">
                     <svg viewBox="0 0 512 512"
                         className="w-4 h-4 fill-current">
                         <path
@@ -27,12 +27,9 @@ export const Footer = () => (
                         </path>
                     </svg>
                 </a>
-                <a href="https://twitter.com/eduardogcdev" target="_blank" className="mx-2 text-gray-100 hover:text-gray-400">
-                    <svg viewBox="0 0 512 512"
-                        className="w-4 h-4 fill-current">
-                        <path
-                            d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z">
-                        </path>
+                <a href="https://www.tiktok.com/@geceduardo" target="_blank" className="mx-2 text-gray-100 hover:text-gray-400" rel="noreferrer">
+                    <svg viewBox="0 0 512 512" className="w-4 h-4 fill-current">
+                        <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
                     </svg>
                 </a>
             </div>

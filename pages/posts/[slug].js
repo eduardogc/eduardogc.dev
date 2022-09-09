@@ -1,91 +1,85 @@
-import matter from "gray-matter";
-import ReactMarkdown from "react-markdown";
+import matter from 'gray-matter'
+import ReactMarkdown from 'react-markdown'
 import Head from 'next/head'
-import { useEffect, useState } from "react";
-import { Footer } from "../../components/Footer";
-import { Navbar } from "../../components/Navbar";
+import { useEffect, useState } from 'react'
+import { Footer } from '../../components/Footer'
+import { Navbar } from '../../components/Navbar'
 
 const Content = ({ content, data }) => {
-
   const [siteURL, setSiteURL] = useState('')
   const [canUpBarOpen, setCanUpBarOpen] = useState(true)
-  const frontmatter = data;
+  const frontmatter = data
+  const [timeReading, setTimeReading] = useState(0)
 
   const formatDate = (date) => {
-    const data = new Date(date),
-      dia = data.getDate().toString(),
-      diaF = (dia.length == 1) ? '0' + dia : dia,
-      mes = (data.getMonth() + 1).toString(), //+1 pois no getMonth Janeiro começa com zero.
-      mesF = (mes.length == 1) ? '0' + mes : mes,
-      anoF = data.getFullYear();
-    return `${diaF}/${mesF}/${anoF}`;
+    const data = new Date(date)
+    const dia = data.getDate().toString()
+    const diaF = (dia.length == 1) ? '0' + dia : dia
+    const mes = (data.getMonth() + 1).toString() // +1 pois no getMonth Janeiro começa com zero.
+    const mesF = (mes.length == 1) ? '0' + mes : mes
+    const anoF = data.getFullYear()
+    return `${diaF}/${mesF}/${anoF}`
   }
 
-  if (process.browser) {
-    var h = document.documentElement,
-      b = document.body,
-      st = 'scrollTop',
-      sh = 'scrollHeight',
-      progress = document.querySelector('#progress'),
-      scroll;
-    var scrollpos = window.scrollY;
-    var header = document.getElementById("header");
-
-    document.addEventListener('scroll', function () {
-
-      /*Refresh scroll % width*/
-      scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
-      progress.style.setProperty('--scroll', scroll + '%');
-
-      /*Apply classes for slide in bar*/
-      scrollpos = window.scrollY;
-
-      if (scrollpos > 100 && canUpBarOpen) {
-        header.classList.remove("hidden");
-        header.classList.remove("fadeOutUp");
-        header.classList.add("slideInDown");
-      } else {
-        header.classList.remove("slideInDown");
-        header.classList.add("fadeOutUp");
-        header.classList.add("hidden");
-      }
-    });
+  function readingTime () {
+    const text = content
+    const wpm = 225
+    const words = text.trim().split(/\s+/).length
+    const time = Math.ceil(words / wpm)
+    return time
   }
 
-  function readingTime() {
+  function hide () {
     if (process.browser) {
-      const text = document.getElementById("blog-main-content").innerText;
-      const wpm = 225;
-      const words = text.trim().split(/\s+/).length;
-      const time = Math.ceil(words / wpm);
-      return time
-    } else {
-      return 0;
-    }
-  }
-
-  function hide() {
-    if (process.browser) {
-      var header = document.getElementById("header");
-      header.classList.remove("slideInDown");
-      header.classList.add("fadeOutUp");
-      header.classList.add("hidden");
+      const header = document.getElementById('header')
+      header.classList.remove('slideInDown')
+      header.classList.add('fadeOutUp')
+      header.classList.add('hidden')
     }
     setCanUpBarOpen(false)
   }
 
   useEffect(() => {
-    var disqus_config = function () {
-      this.page.url = window.location.href;
-      this.page.identifier = '12156509-0d21-4da7-8422-1e8e34fa7fc0';
+    const disqus_config = function () {
+      this.page.url = window.location.href
+      this.page.identifier = '12156509-0d21-4da7-8422-1e8e34fa7fc0'
     };
     (function () {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://eduardogc-dev.disqus.com/embed.js';
+      const d = document; const s = d.createElement('script')
+      s.src = 'https://eduardogc-dev.disqus.com/embed.js'
       s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
+      (d.head || d.body).appendChild(s)
+    })()
     setSiteURL(window.location.href)
+    if (process.browser) {
+      const h = document.documentElement
+      const b = document.body
+      const st = 'scrollTop'
+      const sh = 'scrollHeight'
+      const progress = document.querySelector('#progress')
+      let scroll
+      let scrollpos = window.scrollY
+      const header = document.getElementById('header')
+
+      document.addEventListener('scroll', function () {
+        /* Refresh scroll % width */
+        scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100
+        progress.style.setProperty('--scroll', scroll + '%')
+
+        /* Apply classes for slide in bar */
+        scrollpos = window.scrollY
+
+        if (scrollpos > 100 && canUpBarOpen) {
+          header.classList.remove('hidden')
+          header.classList.remove('fadeOutUp')
+          header.classList.add('slideInDown')
+        } else {
+          header.classList.remove('slideInDown')
+          header.classList.add('fadeOutUp')
+          header.classList.add('hidden')
+        }
+      })
+    }
   }, [])
 
   const customCSS = `.smooth {transition: box-shadow 0.3s ease-in-out;}
@@ -96,7 +90,7 @@ const Content = ({ content, data }) => {
       <Head>
         <meta charSset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <title>{frontmatter.title}</title>
         <meta name="author" content="name" />
         <meta name="description" content="description here" />
@@ -110,7 +104,7 @@ const Content = ({ content, data }) => {
 
         <Navbar />
 
-        <div id="header" className="bg-white fixed w-full z-10 top-0 hidden animated" style={{ opacity: .95 }}>
+        <div id="header" className="bg-white fixed w-full z-10 top-0 hidden animated" style={{ opacity: 0.95 }}>
           <div className="bg-white">
             <div className="flex flex-wrap items-center content-center">
               <div className="flex w-full sm:w-1/2 justify-start items-center text-white">
@@ -151,14 +145,14 @@ const Content = ({ content, data }) => {
 
           <div className="mx-0 sm:mx-6">
 
-            <div id="blog-main-content" className="bg-white w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal" style={{ fontFamily: 'Georgia,serif' }}>
-              <ReactMarkdown>
+            <div id="blog-main-content" className="bg-white w-full p-4 md:p-12 text-lg md:text-lg text-gray-800 leading-normal" style={{ fontFamily: 'Georgia,serif' }}>
+              <ReactMarkdown className="font-serif text-lg antialiased">
                 {content}
               </ReactMarkdown>
             </div>
 
             <div className="flex flex-col w-full items-center text-center font-sans p-4 sm:flex-row sm:text-left md:p-24 ">
-              <img className="w-10 h-10 rounded-full mr-4" src={`https://eduardogc.dev/${frontmatter.authorthumb}`} alt="Avatar of Author" />
+              <img className="w-10 h-10 object-cover rounded-full mr-4" src={`https://eduardogc.dev/${frontmatter.authorthumb}`} alt="Avatar of Author" />
               <div className="flex-1">
                 <p className="text-base font-bold text-base md:text-xl leading-none">{frontmatter.author}</p>
                 <p className="text-gray-600 text-xs md:text-base">Um apaixonado por conhecimento compartilhando um pouquinho de sua jornada.</p>
@@ -179,15 +173,15 @@ const Content = ({ content, data }) => {
         <Footer />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Content;
+export default Content
 
 Content.getInitialProps = async (context) => {
-  const { slug } = context.query;
-  const content = await import(`../../content/pt-br/${slug}.md`);
-  const data = matter(content.default);
+  const { slug } = context.query
+  const content = await import(`../../content/pt-br/${slug}.md`)
+  const data = matter(content.default)
 
-  return { ...data };
-};
+  return { ...data }
+}

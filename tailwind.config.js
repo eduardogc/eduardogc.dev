@@ -1,13 +1,13 @@
 module.exports = {
   purge: [
-    './pages/**/*.js',
+    './pages/**/*.js'
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {}
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 }

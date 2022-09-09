@@ -1,20 +1,24 @@
-import Image from 'next/image';
+import Image from 'next/image'
+import Link from 'next/link'
 
-
-export const Navbar = () => (<nav className="px-6 py-4 bg-white shadow">
-    <div className="container flex flex-col mx-auto md:flex-row md:items-center md:justify-between">
+export const Navbar = () => (<nav className="px-6 py-2 bg-white border border-gray-100 shadow">
+    <div className="container flex flex-col mx-auto sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center justify-between">
             <div>
 
-                <a href="/" className="text-xl font-bold text-gray-800 md:text-2xl flex items-center"><Image
-                    src="/img/egc_logo.png"
-                    alt="Imagem de um gato robô azul"
-                    width={49}
-                    height={49}
-                /> Eduardo GC</a>
+                <Link href="/">
+                    <span className="text-xl font-bold text-gray-800 md:text-2xl flex items-center cursor-pointer">
+                    <Image
+                        src="/img/egc_logo.png"
+                        alt="Imagem de um gato robô azul"
+                        width={49}
+                        height={49}
+                    /> Eduardo GC
+                    </span>
+                    </Link>
             </div>
             <div>
-                <button type="button" className="block text-gray-800 hover:text-gray-600 focus:text-gray-600 focus:outline-none md:hidden">
+                <button type="button" className="block text-gray-800 hover:text-gray-600 focus:text-gray-600 focus:outline-none sm:hidden">
                     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
                         <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
                         </path>
@@ -22,10 +26,12 @@ export const Navbar = () => (<nav className="px-6 py-4 bg-white shadow">
                 </button>
             </div>
         </div>
-        <div className="flex-col hidden md:flex md:flex-row md:-mx-4">
-            <a href="/" className="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">🏠 Home</a>
-            <a href="/blog" className="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">📝 Blog</a>
-            <a href="/sobre" className="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">🔍 Sobre mim</a>
+        <div className="flex-col hidden sm:flex sm:flex-row sm:-mx-4">
+            <Link href="/"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">🏠&nbsp;&nbsp;Home</span></Link>
+            <Link href="/blog"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">📝&nbsp;&nbsp;Blog</span></Link>
+            <Link href="/courses"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">📚&nbsp;&nbsp;Cursos</span></Link>
+            <Link href="/store"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">🐻&nbsp;&nbsp;Loja</span></Link>
+            <Link href="/about"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">🔍&nbsp;&nbsp;Sobre mim</span></Link>
         </div>
     </div>
 </nav>)
