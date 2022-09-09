@@ -2,7 +2,7 @@ export const Footer = () => (
     <footer className="px-6 py-2 text-gray-100 bg-gray-800">
         <div className="container flex flex-col items-center justify-between mx-auto md:flex-row">
             <p className="mt-2 md:mt-0">©{new Date().getFullYear()} Eduardo GC. Todos os direitos reservados.</p>
-            <div className="flex mt-4 mb-2 -mx-2 md:mt-0 md:mb-0">
+            <div className="flex mt-4 mb-2 -mx-2 md:mt-0 md:mb-0 items-center">
                 <a href="https://www.twitch.tv/geceduardo" target="_blank" className="mx-2 text-gray-100 hover:text-gray-400" rel="noreferrer">
                     <svg viewBox="0 0 512 512"
                         className="w-4 h-4 fill-current">
@@ -31,6 +31,15 @@ export const Footer = () => (
                     <svg viewBox="0 0 512 512" className="w-4 h-4 fill-current">
                         <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
                     </svg>
+                </a>
+                <a href="https://ko-fi.com/K3K5EX3A1" target="_blank" rel="noreferrer">
+                    <img
+                        height={36}
+                        style={{ border: 0, height: 36 }}
+                        src="https://cdn.ko-fi.com/cdn/kofi2.png?v=3"
+                        border={0}
+                        alt="Buy Me a Coffee at ko-fi.com"
+                    />
                 </a>
             </div>
         </div>
