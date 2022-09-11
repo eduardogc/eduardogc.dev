@@ -1,6 +1,5 @@
 module.exports = {
-  purge: [
-  ],
+  purge: false,
   darkMode: 'class',
   theme: {
     extend: {}

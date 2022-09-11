@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Sidebar } from './Sidebar'
 
-export const Navbar = () => (<nav className="px-6 py-2 bg-white border border-gray-100 shadow">
+export const Navbar = () => {
+  const [buttonMobileActive, setButtonMobileActive] = useState(false)
+  return (<nav className="px-6 py-2 bg-white border border-gray-100 shadow">
     <div className="container flex flex-col mx-auto sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center justify-between">
             <div>
-
                 <Link href="/">
                     <span className="text-xl font-bold text-gray-800 md:text-2xl flex items-center cursor-pointer">
                     <Image
@@ -18,12 +21,13 @@ export const Navbar = () => (<nav className="px-6 py-2 bg-white border border-gr
                     </Link>
             </div>
             <div>
-                <button type="button" className="block text-gray-800 hover:text-gray-600 focus:text-gray-600 focus:outline-none sm:hidden">
+                <button type="button" onClick={() => setButtonMobileActive(!buttonMobileActive)} className={`block text-gray-800 hover:text-gray-600 focus:text-gray-600 focus:outline-none p-2 ${buttonMobileActive && 'hover:bg-gray-200 bg-gray-200  rounded'} sm:hidden`}>
                     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
                         <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
                         </path>
                     </svg>
                 </button>
+                { buttonMobileActive && <Sidebar /> }
             </div>
         </div>
         <div className="flex-col hidden sm:flex sm:flex-row sm:-mx-4">
@@ -35,3 +39,4 @@ export const Navbar = () => (<nav className="px-6 py-2 bg-white border border-gr
         </div>
     </div>
 </nav>)
+}

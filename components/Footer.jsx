@@ -1,8 +1,8 @@
 export const Footer = () => (
     <footer className="px-6 py-2 text-gray-100 bg-gray-800">
         <div className="container flex flex-col items-center justify-between mx-auto md:flex-row">
-            <p className="mt-2 md:mt-0">©{new Date().getFullYear()} Eduardo GC. Todos os direitos reservados.</p>
-            <div className="flex mt-4 mb-2 -mx-2 md:mt-0 md:mb-0 items-center">
+            <p className="mt-2 md:mt-0 text-sm">©{new Date().getFullYear()} Eduardo GC. Todos os direitos reservados.</p>
+            <div className="flex mt-4 mb-2 -mx-2 md:mt-0 mb-0 items-center">
                 <a href="https://www.twitch.tv/geceduardo" target="_blank" className="mx-2 text-gray-100 hover:text-gray-400" rel="noreferrer">
                     <svg viewBox="0 0 512 512"
                         className="w-4 h-4 fill-current">
