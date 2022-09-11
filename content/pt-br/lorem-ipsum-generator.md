@@ -3,12 +3,12 @@ language: pt-br
 title: Lorem Ipsum generator
 date: 11/23/2021
 author: Eduardo GC
-thumbnail: img/pexels-lisa-109255.jpg
-authorthumb: img/foto-canal-2.png
+thumbnail: https://sat02pap003files.storage.live.com/y4mNPmHyT_BGfKNC9ccW53fekOSdwjF82otT1CJ237Jtx-8II8xyXWw4XNs24aOeRLtFRwIAkAjtMmrpdlx_bnrhBrOK6udnEM-Hjh5pm3aCAC8Hds8RR5zAjCFr3kiQs-vIKl6QNY3Pb0HR0Bw0HhCnTltWUivVXhB16b2HjjnMLlV56gyhzbQTHy8Y4WAAcBW?width=1920&height=1441&cropmode=none
+authorthumb: https://sat02pap003files.storage.live.com/y4m4X-yxO14h58L083pVjDwVVJzJPuUilXprHaos5qs5lCv-rb7tuUHQ1kEQ4SSuDhK3t3Bk9wBpKtCwJ929rQ-HQNU9FFkzFcJZiOSvKRng0Giv8AAHoLuKV9SlS901hhjcF6e6dIP08FBoS6dHtzCexrC1pzj1McjmDr4xtMFVpmdt0GR3pbmC2hZPVfoEHCB?width=144&height=256&cropmode=none
+pageid: 7d2b4eeb-5115-469a-919f-05461fa81865
 tags:
   - teste
   - react
-pageid: 7d2b4eeb-5115-469a-919f-05461fa81865
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada. Morbi tristique senectus et netus et malesuada fames. Nunc mattis enim ut tellus elementum sagittis. Platea dictumst quisque sagittis purus sit amet volutpat consequat mauris. Mi in nulla posuere sollicitudin. Egestas fringilla phasellus faucibus scelerisque eleifend donec. Aliquet nibh praesent tristique magna sit amet purus gravida quis. In iaculis nunc sed augue lacus viverra. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.
 
