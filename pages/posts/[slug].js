@@ -139,7 +139,7 @@ const Content = ({ content, data }) => {
           <span className="text-sm">⏱ Tempo de leitura: {readingTime()} min</span>
         </div>
 
-        <div className="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" style={{ backgroundImage: `url(https://eduardogc.dev/${frontmatter.thumbnail})`, height: '75vh' }}></div>
+        <div className="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" style={{ backgroundImage: `url(${frontmatter.thumbnail})`, height: '75vh' }}></div>
 
         <div className="container max-w-5xl mx-auto -mt-32">
 
@@ -152,7 +152,7 @@ const Content = ({ content, data }) => {
             </div>
 
             <div className="flex flex-col w-full items-center text-center font-sans p-4 sm:flex-row sm:text-left md:p-24 ">
-              <img className="w-10 h-10 object-cover rounded-full mr-4" src={`https://eduardogc.dev/${frontmatter.authorthumb}`} alt="Avatar of Author" />
+              <img className="w-10 h-10 object-cover rounded-full mr-4" src={`${frontmatter.authorthumb}`} alt="Avatar of Author" />
               <div className="flex-1">
                 <p className="text-base font-bold text-base md:text-xl leading-none">{frontmatter.author}</p>
                 <p className="text-gray-600 text-xs md:text-base">Um apaixonado por conhecimento compartilhando um pouquinho de sua jornada.</p>

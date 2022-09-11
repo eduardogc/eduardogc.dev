@@ -25,7 +25,7 @@ export const PostItem = ({ key, post }) => (
     <div className="flex-shrink-0 hidden ml-3 sm:block">
       <img
         className="object-cover w-16 h-16 rounded-lg shadow-sm"
-        src={`/${post.frontMatter.authorthumb}`}
+        src={`${post.frontMatter.authorthumb}`}
         alt=""
       />
     </div>
