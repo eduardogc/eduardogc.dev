@@ -3,8 +3,8 @@ language: pt-br
 title: Teste de Blog
 date: 09/10/2021
 author: Eduardo GC
-thumbnail: img/cachorro.jpeg
-authorthumb: img/foto-canal-2.png
+thumbnail: https://sat02pap003files.storage.live.com/y4mDAYe8OFcRagQScgQDVRZMpRu4gSFpVpae6feHkRjIVlC8-Swtb601ZLhG-QtoDmTZIMh_u_fNC2cuwpfmrwUA50k7cgoos-4ovW4MzLK-VL_RMkdSvIKDTb2ntN9kFSyQSJAg1EBxGnNAp40T-eBOPxQ66ve5waewN8wycSlDiGyr9oRTmUPdziztY5SB_Vh?width=984&height=554&cropmode=none
+authorthumb: https://sat02pap003files.storage.live.com/y4m4X-yxO14h58L083pVjDwVVJzJPuUilXprHaos5qs5lCv-rb7tuUHQ1kEQ4SSuDhK3t3Bk9wBpKtCwJ929rQ-HQNU9FFkzFcJZiOSvKRng0Giv8AAHoLuKV9SlS901hhjcF6e6dIP08FBoS6dHtzCexrC1pzj1McjmDr4xtMFVpmdt0GR3pbmC2hZPVfoEHCB?width=144&height=256&cropmode=none
 pageid: 16e95aa5-ef03-4b2d-96bb-6ad6247bd1ab
 tags:
   - teste
