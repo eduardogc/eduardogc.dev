@@ -3,8 +3,8 @@ language: pt-br
 title: Testezim
 date: 10/10/2021
 author: Eduardo GC
-thumbnail: img/pexels-polina-kovaleva-8102004.jpg
-authorthumb: img/foto-canal-2.png
+thumbnail: https://sat02pap003files.storage.live.com/y4mXNPdXPCsChyC1VLLvITTSinved8JX1fBm-REyRAdvGWEzoRRK6ZrXZkdPyA_gdxNKa9GUku1ICBqiuFbKgdE34gRoVVZ5RgYBSjEoD6d9mbYIlWkYl23SPPnX2gTza41uKNTyCxIjEBy7dh_WXawofSYfknqNHQKYyx0cIe-jH9XCMbUGfT01JbeVJsoNc_I?width=6016&height=4000&cropmode=none
+authorthumb: https://sat02pap003files.storage.live.com/y4m4X-yxO14h58L083pVjDwVVJzJPuUilXprHaos5qs5lCv-rb7tuUHQ1kEQ4SSuDhK3t3Bk9wBpKtCwJ929rQ-HQNU9FFkzFcJZiOSvKRng0Giv8AAHoLuKV9SlS901hhjcF6e6dIP08FBoS6dHtzCexrC1pzj1McjmDr4xtMFVpmdt0GR3pbmC2hZPVfoEHCB?width=144&height=256&cropmode=none
 pageid: 6cd08bff-9444-421d-976e-7bd86012567b
 tags:
   - teste
