@@ -1,7 +1,7 @@
 module.exports = {
   target: 'serverless',
   images: {
-    domains: ['eduardogc.dev']
+    domains: ['eduardogc.dev', 'sat02pap003files.storage.live.com']
   },
   webpack: (config) => {
     config.module.rules.push(

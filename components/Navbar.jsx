@@ -12,7 +12,7 @@ export const Navbar = () => {
                 <Link href="/">
                     <span className="text-xl font-bold text-gray-800 md:text-2xl flex items-center cursor-pointer">
                     <Image
-                        src="/img/egc_logo.png"
+                        src="https://sat02pap003files.storage.live.com/y4mRydDqy3sOYP-0gfsFWdYe35aRrtEgfGKSwDzwDI1EHo3fKKtAfWyC2CDJeqdWH0rxtySKTMvJCQPxtWFoPteS0JfSIh5_ov9ITG9-q8o9VsNShDQDf88-rGRzsXAKjBpKDKxDhLScwXNlJrmOU-8W-abTDqkCoQnPENrJxFgvmkGXcL8vvhz6B1DMh4I4Khd?width=500&height=500&cropmode=none"
                         alt="Imagem de um gato robô azul"
                         width={49}
                         height={49}
