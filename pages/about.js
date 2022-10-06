@@ -41,12 +41,12 @@ const About = () => (
           Belo Horizonte, Brazil
         </p>
         <p className="pt-8 text-sm">
-          Dimensional, programador, modelo e criador de conteúdo.
+          Dimensional, Programador, Modelo e Criador de conteúdo.
         </p>
         <div className="pt-12 pb-8">
-          <button className="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-full">
+          <span className="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-full">
             Me siga nas redes sociais
-          </button>
+          </span>
         </div>
         <div className="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
           <a className="link" href="https://github.com/eduardogc" data-tippy-content="@github_handle">

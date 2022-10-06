@@ -32,9 +32,9 @@ export const Navbar = () => {
         </div>
         <div className="flex-col hidden sm:flex sm:flex-row sm:-mx-4">
             <Link href="/"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">🏠&nbsp;&nbsp;Home</span></Link>
-            <Link href="/blog"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">📝&nbsp;&nbsp;Blog</span></Link>
+            {/* <Link href="/blog"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">📝&nbsp;&nbsp;Blog</span></Link>
             <Link href="/courses"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">📚&nbsp;&nbsp;Cursos</span></Link>
-            <Link href="/store"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">🐻&nbsp;&nbsp;Loja</span></Link>
+            <Link href="/store"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">🐻&nbsp;&nbsp;Loja</span></Link> */}
             <Link href="/about"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">🔍&nbsp;&nbsp;Sobre mim</span></Link>
         </div>
     </div>
