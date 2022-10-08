@@ -23,7 +23,7 @@ export const Sidebar = () => (
               <span>📝</span>
               <span className="flex-1 ml-3 whitespace-nowrap">Blog</span>
             </a>
-          </li>
+          </li> */}
           <li>
             <a
               href="/courses"
@@ -33,7 +33,7 @@ export const Sidebar = () => (
               <span className="flex-1 ml-3 whitespace-nowrap">Cursos</span>
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
               href="/store"
               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"

@@ -7028,7 +7028,9 @@
     }
 }
 
-.smartpage-container {
-    position: relative;
-    z-index: 10
+.image-cover {
+    height: 250px;
+    width: 100vw;
+    object-fit: cover;
+    filter: grayscale(100%);
 }
