@@ -12,13 +12,11 @@ export default function Home () {
         <meta property="og:type" content="article" />
         <meta property="og:image" content="https://sn3301files.storage.live.com/y4mVAlAPBqzCKKcVhq_gxzLDd9MPrh_QzMBbMLFaEvnGaYSJzb7dnoW1C3HaHLBugvBw0t_X2MjkKTroKx2ee31pz30mpuI1AZmDb4QD87Il_hENDhLZvRc2GuDJtbg1IwYoM2MeiZA9POSnTFqsran3Y-yTnOjYXZ2kn-jwU8lNYlEy9oN5mCMH_8B-5iQC-PR?width=1920&height=1080&cropmode=none" />
         <meta property="og:title" content="Eduardo GC" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8355478857108657"
-     crossOrigin="anonymous"></script>
       </Head>
       <Navbar />
       <main className="theme-12 12-theme">
         <div className="container smartpage-container">
-          <header><img src="https://sn3301files.storage.live.com/y4mVAlAPBqzCKKcVhq_gxzLDd9MPrh_QzMBbMLFaEvnGaYSJzb7dnoW1C3HaHLBugvBw0t_X2MjkKTroKx2ee31pz30mpuI1AZmDb4QD87Il_hENDhLZvRc2GuDJtbg1IwYoM2MeiZA9POSnTFqsran3Y-yTnOjYXZ2kn-jwU8lNYlEy9oN5mCMH_8B-5iQC-PR?width=1920&height=1080&cropmode=none" className="avatar" alt=""
+          <header><img src="https://sat02pap003files.storage.live.com/y4mRINOsH9pAOR6auEavKbgASb7625jW1ElmOEAsGJMYiEBS6_AYvnK52RNUUI79EunqArzTAgrLvdy9KpZWNy3C2jaZPmWsWVAUf6hKfPpT994MK94rjQ3KRYn-GzBzF9Nq6KgB9L3SpUKUKkwZsaPgkP_dEOSsV4XZOnEmwyhM2N9LIvJN9URfHnweKAwPjSZ?width=1920&height=1080&cropmode=none" className="avatar" alt=""
             title="Eduardo GC" />
             <div className="bio-title">
               <h1 align="center">Eduardo GC</h1>

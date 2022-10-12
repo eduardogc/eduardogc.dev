@@ -26,25 +26,25 @@ export const Sidebar = () => (
           </li> */}
           <li>
             <a
-              href="/courses"
+              href="/cursos"
               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <span>📚</span>
               <span className="flex-1 ml-3 whitespace-nowrap">Cursos</span>
             </a>
           </li>
-          {/* <li>
+          <li>
             <a
-              href="/store"
+              href="/loja"
               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <span>🐻</span>
               <span className="flex-1 ml-3 whitespace-nowrap">Loja</span>
             </a>
-          </li> */}
+          </li>
           <li>
             <a
-              href="/about"
+              href="/sobre"
               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <span>🔍</span>
