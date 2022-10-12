@@ -1,8 +1,19 @@
+import Head from 'next/head'
 import { Footer } from '../components/Footer'
 import { Navbar } from '../components/Navbar'
 
 const About = () => (
     <>
+    <Head>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-8870TJH6N0"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-8870TJH6N0');
+      </script>
+    </Head>
     <Navbar />
   <div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
     {/* Main Col */}

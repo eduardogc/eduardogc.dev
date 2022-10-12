@@ -12,6 +12,14 @@ export default function Home () {
         <meta property="og:type" content="article" />
         <meta property="og:image" content="https://sn3301files.storage.live.com/y4mVAlAPBqzCKKcVhq_gxzLDd9MPrh_QzMBbMLFaEvnGaYSJzb7dnoW1C3HaHLBugvBw0t_X2MjkKTroKx2ee31pz30mpuI1AZmDb4QD87Il_hENDhLZvRc2GuDJtbg1IwYoM2MeiZA9POSnTFqsran3Y-yTnOjYXZ2kn-jwU8lNYlEy9oN5mCMH_8B-5iQC-PR?width=1920&height=1080&cropmode=none" />
         <meta property="og:title" content="Eduardo GC" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8870TJH6N0"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-8870TJH6N0');
+        </script>
       </Head>
       <Navbar />
       <main className="theme-12 12-theme">
