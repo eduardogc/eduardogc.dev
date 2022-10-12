@@ -18,9 +18,9 @@ const About = () => (
             backgroundImage: 'url("https://sat02pap003files.storage.live.com/y4m4X-yxO14h58L083pVjDwVVJzJPuUilXprHaos5qs5lCv-rb7tuUHQ1kEQ4SSuDhK3t3Bk9wBpKtCwJ929rQ-HQNU9FFkzFcJZiOSvKRng0Giv8AAHoLuKV9SlS901hhjcF6e6dIP08FBoS6dHtzCexrC1pzj1McjmDr4xtMFVpmdt0GR3pbmC2hZPVfoEHCB?width=750&height=1334&cropmode=none")'
           }}
         />
-        <h1 className="text-3xl font-bold pt-8 lg:pt-0">Eduardo Gonçalves Costa</h1>
-        <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-blue-500 opacity-25" />
-        <p className="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
+        <h1 className="text-gray-900 text-3xl font-bold pt-8 lg:pt-0">Eduardo Gonçalves Costa</h1>
+        <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-blue-500" />
+        <p className="text-gray-800 pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
           <svg
             className="h-4 fill-current text-blue-700 pr-4"
             xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ const About = () => (
           </svg>{' '}
           Senior Software Developer
         </p>
-        <p className="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
+        <p className="pt-2 text-gray-800 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
           <svg
             className="h-4 fill-current text-blue-700 pr-4"
             xmlns="http://www.w3.org/2000/svg"
@@ -40,18 +40,18 @@ const About = () => (
           </svg>{' '}
           Belo Horizonte, Brazil
         </p>
-        <p className="pt-8 text-sm">
+        <p className="text-gray-900 pt-8 text-sm">
           Dimensional, Programador, Modelo e Criador de conteúdo.
         </p>
-        <div className="pt-12 pb-8">
-          <span className="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-full">
-            Me siga nas redes sociais
+        <div className="pt-8 pb-2">
+          <span className="text-gray-900 font-bold">
+            Me siga nas redes sociais:
           </span>
         </div>
         <div className="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
           <a className="link" href="https://github.com/eduardogc" data-tippy-content="@github_handle">
             <svg
-              className="h-6 fill-current text-gray-600 hover:text-blue-700"
+              className="h-6 fill-current text-gray-900 hover:text-blue-700"
               role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ const About = () => (
           </a>
           <a className="link" href="https://instagram.com/soueduardogc" data-tippy-content="@instagram_handle">
             <svg
-              className="h-6 fill-current text-gray-600 hover:text-blue-700"
+              className="h-6 fill-current text-gray-900 hover:text-blue-700"
               role="img"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@ const About = () => (
           </a>
           <a className="link" href="https://www.youtube.com/channel/UC2-FsOpGAR4_Cumpyo30bTQ/" data-tippy-content="@youtube_handle">
             <svg
-              className="h-6 fill-current text-gray-600 hover:text-blue-700"
+              className="h-6 fill-current text-gray-900 hover:text-blue-700"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -84,7 +84,7 @@ const About = () => (
           </a>
           <a className="link" href="https://www.tiktok.com/@soueduardogc" data-tippy-content="@tiktok_handle">
             <svg
-              className="h-6 fill-current text-gray-600 hover:text-blue-700"
+              className="h-6 fill-current text-gray-900 hover:text-blue-700"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
