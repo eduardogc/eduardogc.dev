@@ -45,13 +45,13 @@ const copyToClipboard = () => {
 
 const Store = () => (
 <>
-  <Script strategy="lazyOnload" src={'https://www.googletagmanager.com/gtag/js?id=G-8870TJH6N0'} />
+  <Script strategy="lazyOnload" src={'https://www.googletagmanager.com/gtag/js?id=G-4HM9TML36B'} />
   <Script strategy="lazyOnload">
       {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-8870TJH6N0', {
+          gtag('config', 'G-4HM9TML36B', {
           page_path: window.location.pathname,
           });
       `}
