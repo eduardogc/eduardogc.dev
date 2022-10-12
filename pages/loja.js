@@ -46,7 +46,7 @@ const Store = () => (
 <>
   <Navbar />
   <div className="flex flex-col w-full bg-pink-100 py-8 mt-8 md:mt-16">
-    <span className="mb-8 text-center text-md text-black md:text-3xl">Use meu código em qualquer produto da Amazon e ganhe descontos:</span>
+    <span className="mb-8 text-center text-lg text-black md:text-2xl px-2">Use meu código em qualquer produto da Amazon e ganhe descontos:</span>
     <span className="flex justify-center self-center w-10/12 md:w-4/12">
       <Tooltip
         title="Copiado!"
@@ -59,6 +59,7 @@ const Store = () => (
         </button>
       </Tooltip>
     </span>
+    <span className="block mt-8 text-center text-lg text-black md:text-xl px-2">Além disso, na minha loja abaixo trago as melhores recomendações para você!</span>
     <input id="button-store-copy" type="text" className="hidden" value="eduardogc-20" readOnly />
   </div>
   <div className="font-sans bg-white flex flex-col min-h-screen w-full">
