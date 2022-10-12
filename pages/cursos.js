@@ -2,20 +2,21 @@ import { Footer } from '../components/Footer'
 import { Navbar } from '../components/Navbar'
 import { CourseCard } from '../components/Courses/CourseCard/CourseCard'
 import { EmptyCourseSlot } from '../components/Courses/EmptyCourseSlot/EmptyCourseSlot'
-import Head from 'next/head'
+import Script from 'next/script'
 
 const Courses = () => (
     <>
-      <Head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-8870TJH6N0"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-8870TJH6N0');
-      </script>
-      </Head>
+      <Script strategy="lazyOnload" src={'https://www.googletagmanager.com/gtag/js?id=G-8870TJH6N0'} />
+      <Script strategy="lazyOnload">
+          {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-8870TJH6N0', {
+              page_path: window.location.pathname,
+              });
+          `}
+      </Script>
       <div className="font-sans bg-white flex flex-col min-h-screen w-full">
         <Navbar />
           <section>

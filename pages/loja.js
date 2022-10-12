@@ -4,7 +4,7 @@ import StoreSection from '../components/StoreSection/StoreSection'
 import {
   Tooltip
 } from 'react-tippy'
-import Head from 'next/head'
+import Script from 'next/script'
 
 const productivityItems = [
   '//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=eduardogc-20&language=pt_BR&marketplace=amazon&region=BR&placement=B07Z52XZBQ&asins=B07Z52XZBQ&linkId=3cb168ec58a28fc97a6bdfac7177694a&show_border=true&link_opens_in_new_window=true',
@@ -45,16 +45,17 @@ const copyToClipboard = () => {
 
 const Store = () => (
 <>
-  <Head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8870TJH6N0"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-8870TJH6N0');
-    </script>
-  </Head>
+  <Script strategy="lazyOnload" src={'https://www.googletagmanager.com/gtag/js?id=G-8870TJH6N0'} />
+  <Script strategy="lazyOnload">
+      {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-8870TJH6N0', {
+          page_path: window.location.pathname,
+          });
+      `}
+  </Script>
   <Navbar />
   <div className="flex flex-col w-full bg-pink-100 py-8 mt-8 md:mt-16">
     <span className="mb-8 text-center text-lg text-black md:text-2xl px-2">Use meu código em qualquer produto da Amazon e ganhe descontos:</span>
