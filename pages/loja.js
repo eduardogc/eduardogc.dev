@@ -1,9 +1,9 @@
 import { Footer } from '../components/Footer'
 import { Navbar } from '../components/Navbar'
 import StoreSection from '../components/StoreSection/StoreSection'
-import {
-  Tooltip
-} from 'react-tippy'
+// import {
+//   Tooltip
+// } from 'react-tippy'
 import Script from 'next/script'
 
 const productivityItems = [
@@ -58,8 +58,8 @@ const Store = () => (
   </Script>
   <Navbar />
   <div className="flex flex-col w-full bg-pink-100 py-8 mt-8 md:mt-16">
-    <span className="mb-8 text-center text-lg text-black md:text-2xl px-2">Use meu código em qualquer produto da Amazon e ganhe descontos:</span>
-    <span className="flex justify-center self-center w-10/12 md:w-4/12">
+    {/* <span className="mb-8 text-center text-lg text-black md:text-2xl px-2">Use meu código em qualquer produto da Amazon e ganhe descontos:</span> */}
+    {/* <span className="flex justify-center self-center w-10/12 md:w-4/12">
       <Tooltip
         title="Copiado!"
         position="top"
@@ -70,8 +70,8 @@ const Store = () => (
           eduardogc-20
         </button>
       </Tooltip>
-    </span>
-    <span className="block mt-8 text-center text-lg text-black md:text-xl px-2">Além disso, na minha loja abaixo trago as melhores recomendações para você!</span>
+    </span> */}
+    <span className="block text-center text-lg text-black md:text-xl px-2">Trago abaixo as melhores recomendações para você!</span>
     <input id="button-store-copy" type="text" className="hidden" value="eduardogc-20" readOnly />
   </div>
   <div className="font-sans bg-white flex flex-col min-h-screen w-full">
