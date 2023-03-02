@@ -1,5 +1,5 @@
 module.exports = {
-  target: 'serverless',
+  swcMinify: true,
   images: {
     domains: ['eduardogc.dev', 'sat02pap003files.storage.live.com']
   },
