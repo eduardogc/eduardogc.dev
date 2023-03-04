@@ -9,14 +9,14 @@ const Content = ({ content, data }) => {
   const [siteURL, setSiteURL] = useState('')
   const [canUpBarOpen, setCanUpBarOpen] = useState(true)
   const frontmatter = data
-  const [timeReading, setTimeReading] = useState(0)
+  // const [timeReading, setTimeReading] = useState(0)
 
   const formatDate = (date) => {
     const data = new Date(date)
     const dia = data.getDate().toString()
-    const diaF = (dia.length == 1) ? '0' + dia : dia
+    const diaF = (dia.length === 1) ? '0' + dia : dia
     const mes = (data.getMonth() + 1).toString() // +1 pois no getMonth Janeiro começa com zero.
-    const mesF = (mes.length == 1) ? '0' + mes : mes
+    const mesF = (mes.length === 1) ? '0' + mes : mes
     const anoF = data.getFullYear()
     return `${diaF}/${mesF}/${anoF}`
   }
@@ -40,10 +40,10 @@ const Content = ({ content, data }) => {
   }
 
   useEffect(() => {
-    const disqus_config = function () {
-      this.page.url = window.location.href
-      this.page.identifier = '12156509-0d21-4da7-8422-1e8e34fa7fc0'
-    };
+    // const disqus_config = function () {
+    //   this.page.url = window.location.href
+    //   this.page.identifier = '12156509-0d21-4da7-8422-1e8e34fa7fc0'
+    // };
     (function () {
       const d = document; const s = d.createElement('script')
       s.src = 'https://eduardogc-dev.disqus.com/embed.js'

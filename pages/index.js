@@ -6,8 +6,8 @@ import { Navbar } from '../components/Navbar'
 export default function Home () {
   return (
     <div>
-      <Script strategy="lazyOnload" src={'https://www.googletagmanager.com/gtag/js?id=G-4HM9TML36B'} />
-      <Script strategy="lazyOnload">
+      <Script id="g-tag-link" strategy="lazyOnload" src={'https://www.googletagmanager.com/gtag/js?id=G-4HM9TML36B'} />
+      <Script id="g-tag-script" strategy="lazyOnload">
           {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}

@@ -36,17 +36,17 @@ const randomItems = [
   '//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=eduardogc-20&language=pt_BR&marketplace=amazon&region=BR&placement=B08VF2QXWV&asins=B08VF2QXWV&linkId=fb3f1900af7b234d8b348dc79930ffc9&show_border=true&link_opens_in_new_window=true'
 ]
 
-const copyToClipboard = () => {
-  const copyText = document.getElementById('button-store-copy')
-  copyText.select()
-  copyText.setSelectionRange(0, 99999)
-  navigator.clipboard.writeText(copyText.value)
-}
+// const copyToClipboard = () => {
+//   const copyText = document.getElementById('button-store-copy')
+//   copyText.select()
+//   copyText.setSelectionRange(0, 99999)
+//   navigator.clipboard.writeText(copyText.value)
+// }
 
 const Store = () => (
 <>
-  <Script strategy="lazyOnload" src={'https://www.googletagmanager.com/gtag/js?id=G-4HM9TML36B'} />
-  <Script strategy="lazyOnload">
+  <Script id="g-tag-link" strategy="lazyOnload" src={'https://www.googletagmanager.com/gtag/js?id=G-4HM9TML36B'} />
+  <Script id="g-tag-script" strategy="lazyOnload">
       {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

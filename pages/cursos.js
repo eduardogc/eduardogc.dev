@@ -3,11 +3,12 @@ import { Navbar } from '../components/Navbar'
 import { CourseCard } from '../components/Courses/CourseCard/CourseCard'
 import { EmptyCourseSlot } from '../components/Courses/EmptyCourseSlot/EmptyCourseSlot'
 import Script from 'next/script'
+import Link from 'next/link'
 
 const Courses = () => (
     <>
-      <Script strategy="lazyOnload" src={'https://www.googletagmanager.com/gtag/js?id=G-4HM9TML36B'} />
-      <Script strategy="lazyOnload">
+      <Script id="g-tag-link" strategy="lazyOnload" src={'https://www.googletagmanager.com/gtag/js?id=G-4HM9TML36B'} />
+      <Script id="g-tag-script" strategy="lazyOnload">
           {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -30,7 +31,7 @@ const Courses = () => (
                   <p className="mt-4 text-gray-600">
                       Comece ainda hoje a subir o próximo degrau da sua carreira.
                   </p>
-                  <a
+                  <Link
                     className="inline-flex items-center px-8 py-3 mt-8 text-white bg-indigo-600 border border-indigo-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
                     href="/"
                   >
@@ -49,7 +50,7 @@ const Courses = () => (
                         d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
                   <CourseCard
