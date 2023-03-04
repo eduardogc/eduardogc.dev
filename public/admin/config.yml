@@ -4,8 +4,8 @@ backend:
 publish_mode: editorial_workflow
 media_folder: public/img
 public_folder: img
-site_url: https://eduardogc.dev/blog
-display_url: https://eduardogc.dev/blog
+site_url: https://eduardogc.tech/blog
+display_url: https://eduardogc.tech/blog
 collections:
   - label: "Blog em português"
     name: "posts_portugues"
