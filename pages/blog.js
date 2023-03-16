@@ -8,19 +8,28 @@ const Blog = ({ posts }) => {
     <div className="overflow-x-hidden bg-gray-100">
       <Navbar />
 
-      <div className="px-6 py-8 sm:min-h-screen">
-        <div className="container flex justify-center mx-auto">
-          <div className="w-full lg:w-7/12">
-            <div className="flex items-center justify-between">
-              <h1 className="text-xl font-bold text-gray-700 md:text-2xl">Posts</h1>
-              <div>
-                <select className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                  <option>Latest</option>
-                  <option>Last Week</option>
-                </select>
-              </div>
+      <section>
+        <img className="image-cover" src="https://sat02pap003files.storage.live.com/y4mWJDYxk5kdfrP0osopCsweZO3bA4xsLapHO4Y6FjI0IXn40TEpyDzAK_t2C52uhAFiYe0XuCaU2W9o5Ca-tCLsX7SFiy363-FFsbDjylJyQWQzgczqFdtoFixI4a3Z4sYO72zms0xSpgqRmFU0tKjXNQJm15OHhS1ndn8XB7ASrWCgiPqkuaMrxW1LnOP3GXP?width=5794&height=3863&cropmode=none"/>
+        <div className="px-4 pt-16 max-w-screen-lg sm:px-6 lg:px-8 mx-auto">
+          <div className="grid grid-cols-1 gap-y-8 lg:gap-x-16 lg:items-center">
+            <div className="max-w-lg mx-auto text-center">
+              <h2 className="text-3xl font-bold text-gray-700 sm:text-4xl">
+              Blog
+              </h2>
+              <p className="mt-4 text-gray-600">
+              Boas vindas ao meu blog, onde compartilho minhas experiências e opiniões sobre o mundo da tecnologia e como ela está transformando a sociedade moderna.
+              </p>
             </div>
+          </div>
+        </div>
+      </section>
 
+      <div className="px-6 py-1 sm:min-h-screen">
+        <div className="container flex justify-center mx-auto">
+
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-wrap -m-4">
             {posts &&
               posts
                 .sort(
@@ -34,7 +43,9 @@ const Blog = ({ posts }) => {
                 })}
           </div>
         </div>
-      </div>
+      </section>
+          </div>
+        </div>
       <Footer />
     </div>
   )
