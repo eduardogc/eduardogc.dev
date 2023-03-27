@@ -6,7 +6,7 @@ import { Sidebar } from './Sidebar'
 export const Navbar = () => {
   const [buttonMobileActive, setButtonMobileActive] = useState(false)
   return (<nav className="px-6 py-2 bg-white border border-gray-100 shadow">
-    <div className="container flex flex-col mx-auto sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex flex-col mx-auto sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center justify-between">
             <div>
                 <Link href="/">

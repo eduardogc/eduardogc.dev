@@ -53,7 +53,7 @@ const About = () => (
           Belo Horizonte, Brazil
         </p>
         <p className="text-gray-900 pt-8 text-sm">
-          Dimensional, Programador, Modelo e Criador de conteúdo.
+          Dimensional, Programador, Modelo e Youtuber.
         </p>
         <div className="pt-8 pb-2">
           <span className="text-gray-900 font-bold">

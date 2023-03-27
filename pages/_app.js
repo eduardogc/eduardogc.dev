@@ -1,8 +1,6 @@
 import '../styles/globals.css'
 import '../styles/main.css'
 import '../styles/eduardogc-specific.css'
-import 'tailwindcss/tailwind.css'
-import 'react-tippy/dist/tippy.css'
 
 function MyApp ({ Component, pageProps }) {
   return <Component {...pageProps} />

@@ -1,11 +1,15 @@
 import matter from 'gray-matter'
-import ReactMarkdown from 'react-markdown'
+import Markdown from 'marked-react'
 import Head from 'next/head'
+import { useRouter } from 'next/router';
 import { useEffect } from 'react'
 import { Footer } from '../../components/Footer'
 import { Navbar } from '../../components/Navbar'
+import Lowlight from 'react-lowlight';
+import javascript from 'highlight.js/lib/languages/javascript';
 
 const Content = ({ content, data }) => {
+  const { asPath } = useRouter();
   const frontmatter = data
 
   const formatDate = (date) => {
@@ -25,6 +29,13 @@ const Content = ({ content, data }) => {
     const time = Math.ceil(words / wpm)
     return time
   }
+
+  Lowlight.registerLanguage('js', javascript);
+  const renderer = {
+    code(snippet, lang) {
+      return <Lowlight language={lang} value={snippet} />;
+    },
+  };
 
   useEffect(() => {
     // const disqus_config = function () {
@@ -48,11 +59,20 @@ const Content = ({ content, data }) => {
         <meta charSset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <title>{frontmatter.title}</title>
-        <meta name="author" content="name" />
-        <meta name="description" content="description here" />
-        <meta name="keywords" content="keywords,here" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet" />
+        <title>{frontmatter.title} | Eduardo GC Blog</title>
+        <meta name="author" content="Eduardo GC" />
+        <meta name="description" content={frontmatter.description} />
+        <meta name="keywords" content={frontmatter.tags.toString()} />
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:url" content={`https://eduardogc.tech${asPath}`} />
+        <meta property="og:image" content={frontmatter.thumbnail} />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content={frontmatter.description} />
+        <meta property="og:locale" content="pt_BR" />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/browse/highlight.js@11.3.1/styles/a11y-dark.css"
+        />
         <style>
           {customCSS}
         </style>
@@ -61,25 +81,26 @@ const Content = ({ content, data }) => {
 
         <Navbar />
 
-        <div className="text-center pt-16 md:pt-32">
+        <div className="text-center pt-8 md:pt-16">
           <p className="text-sm md:text-base text-green-500 font-bold">{formatDate(frontmatter.date)}</p>
           <h1 className="font-bold break-normal text-3xl md:text-5xl">{frontmatter.title}</h1>
           <span className="text-sm">⏱ Tempo de leitura: {readingTime()} min</span>
         </div>
 
-        <div className="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" style={{ backgroundImage: `url(${frontmatter.thumbnail})`, height: '75vh' }}></div>
+        <div className="w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" style={{ backgroundImage: `url(${frontmatter.thumbnail})`, height: '75vh' }}></div>
 
-        <div className="container max-w-5xl mx-auto -mt-32">
+        <div className="max-w-5xl mx-auto -mt-32">
 
           <div className="mx-0 sm:mx-6">
 
             <div id="blog-main-content" className="bg-white w-full p-4 md:p-12 text-lg md:text-lg text-gray-800 leading-normal" style={{ fontFamily: 'Georgia,serif' }}>
-              <ReactMarkdown className="font-serif text-lg antialiased">
-                {content}
-              </ReactMarkdown>
-            </div>
+              <Markdown 
+                className="font-serif text-lg antialiased"
+                value={content} 
+                renderer={renderer} />
+            </div> 
 
-            <div className="flex flex-col w-full items-center text-center font-sans p-4 sm:flex-row sm:text-left md:p-24 ">
+            <div className="flex flex-col w-full items-center text-center font-sans p-4 sm:flex-row sm:text-left md:p-8 ">
               <img className="w-10 h-10 object-cover rounded-full mr-4" src={`${frontmatter.authorthumb}`} alt="Avatar of Author" />
               <div className="flex-1">
                 <p className="text-base font-bold text-base md:text-xl leading-none">{frontmatter.author}</p>
