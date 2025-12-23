@@ -1,42 +1,140 @@
-import { useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Sidebar } from './Sidebar'
+import { useState, useEffect } from 'react';
+import { Icons } from './Icons';
 
-export const Navbar = () => {
-  const [buttonMobileActive, setButtonMobileActive] = useState(false)
-  return (<nav className="px-6 py-2 bg-white border border-gray-100 shadow">
-    <div className="flex flex-col mx-auto sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center justify-between">
-            <div>
-                <Link href="/">
-                    <span className="text-xl font-bold text-gray-800 md:text-2xl flex items-center cursor-pointer">
-                    <Image
-                        src="https://sat02pap003files.storage.live.com/y4mRydDqy3sOYP-0gfsFWdYe35aRrtEgfGKSwDzwDI1EHo3fKKtAfWyC2CDJeqdWH0rxtySKTMvJCQPxtWFoPteS0JfSIh5_ov9ITG9-q8o9VsNShDQDf88-rGRzsXAKjBpKDKxDhLScwXNlJrmOU-8W-abTDqkCoQnPENrJxFgvmkGXcL8vvhz6B1DMh4I4Khd?width=500&height=500&cropmode=none"
-                        alt="Imagem de um gato robô azul"
-                        width={49}
-                        height={49}
-                    /> Eduardo GC
-                    </span>
-                    </Link>
-            </div>
-            <div>
-                <button type="button" onClick={() => setButtonMobileActive(!buttonMobileActive)} className={`block text-gray-800 hover:text-gray-600 focus:text-gray-600 focus:outline-none p-2 ${buttonMobileActive && 'hover:bg-gray-200 bg-gray-200  rounded'} sm:hidden`}>
-                    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
-                        <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
-                        </path>
+export function Navbar({ lang, setLang, texts }) {
+    const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const navLinks = [
+        { name: texts.about, href: '#about' },
+        { name: texts.skills, href: '#skills' },
+        { name: texts.projects, href: '#projects' },
+        { name: texts.contact, href: '#contact' },
+    ];
+
+    return (
+        <nav
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass-strong py-4' : 'bg-transparent py-6'
+                }`}
+        >
+            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+                <a href="#" className="text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
+                    Eduardo <span className="gradient-text">GC</span>
+                </a>
+
+                {/* Desktop Menu */}
+                <div className="hidden md:flex items-center gap-8">
+                    <div className="flex items-center gap-6">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                    </div>
+
+                    <div className="h-6 w-px bg-white/10" />
+
+                    <div className="flex items-center gap-4">
+                        <button
+                            onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')}
+                            className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                            title={lang === 'pt' ? "Switch to English" : "Mudar para Português"}
+                        >
+                            <Icons.Globe className="w-4 h-4" />
+                            <span>{lang.toUpperCase()}</span>
+                        </button>
+                        <a
+                            href="https://clarionestudios.com.br"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn btn-secondary py-2 px-4 text-xs bg-black hover:bg-zinc-900 border-zinc-800"
+                        >
+                            {texts.clarion}
+                        </a>
+                        <a
+                            href="https://google.com"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn btn-primary py-2 px-4 text-xs"
+                        >
+                            {texts.guio}
+                        </a>
+                    </div>
+                </div>
+
+                {/* Mobile Toggle */}
+                <button
+                    className="md:hidden text-white"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        {mobileMenuOpen ? (
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        ) : (
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                        )}
                     </svg>
                 </button>
-                { buttonMobileActive && <Sidebar /> }
             </div>
-        </div>
-        <div className="flex-col hidden sm:flex sm:flex-row sm:-mx-4">
-            <Link href="/"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">🏠&nbsp;&nbsp;Home</span></Link>
-            {/* <Link href="/blog"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">📝&nbsp;&nbsp;Blog</span></Link> */}
-            <Link href="/cursos"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">📚&nbsp;&nbsp;Cursos</span></Link>
-            {/* <Link href="/loja"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">🐻&nbsp;&nbsp;Loja</span></Link> */}
-            <Link href="/sobre"><span className="my-1 text-gray-800 hover:underline hover:text-blue-500 sm:mx-4 sm:my-0 cursor-pointer">🔍&nbsp;&nbsp;Sobre mim</span></Link>
-        </div>
-    </div>
-</nav>)
+
+            {/* Mobile Menu */}
+            {mobileMenuOpen && (
+                <div className="md:hidden absolute top-full left-0 right-0 glass-strong border-t border-white/10 p-6 flex flex-col gap-4 animate-slide-down shadow-2xl">
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.name}
+                            href={link.href}
+                            className="text-lg font-medium text-gray-300 hover:text-white"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            {link.name}
+                        </a>
+                    ))}
+                    <div className="h-px bg-white/10 my-2" />
+                    <div className="flex flex-col gap-3 w-full sm:flex-row sm:w-auto items-center justify-between">
+                        <button
+                            onClick={() => {
+                                setLang(lang === 'pt' ? 'en' : 'pt');
+                                setMobileMenuOpen(false);
+                            }}
+                            className="flex items-center gap-2 text-sm font-medium text-gray-300 mb-2 sm:mb-0"
+                        >
+                            <Icons.Globe className="w-4 h-4" />
+                            <span>{lang === 'pt' ? 'Mudar para Inglês' : 'Switch to Portuguese'}</span>
+                        </button>
+                        <div className="flex items-center gap-3">
+                            <a
+                                href="https://clarionestudios.com.br"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="btn btn-secondary py-2 px-6 text-sm bg-black hover:bg-zinc-900 border-zinc-800"
+                            >
+                                {texts.clarion}
+                            </a>
+                            <a
+                                href="https://google.com"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="btn btn-primary py-2 px-6 text-sm"
+                            >
+                                {texts.guio}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </nav>
+    );
 }

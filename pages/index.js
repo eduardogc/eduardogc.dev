@@ -1,180 +1,176 @@
-import Head from 'next/head'
-import Script from 'next/script'
-import { Footer } from '../components/Footer'
-import { Navbar } from '../components/Navbar'
+import Head from 'next/head';
+import { useState } from 'react';
+import { motion } from 'motion/react';
+import { Navbar } from '../components/Navbar';
+import { Footer } from '../components/Footer';
+import { SocialLinks } from '../components/SocialLinks';
+import { AnimatedSection } from '../components/AnimatedSection';
+import { SkillBadge } from '../components/SkillBadge';
+import { ExperienceCard } from '../components/ExperienceCard';
+import { content } from '../lib/content';
 
-export default function Home () {
+export default function Home() {
+  const [lang, setLang] = useState('pt');
+  const t = content[lang];
+
+  const skills = [
+    "React", "Next.js", "Node.js", "TypeScript", "JavaScript",
+    "AWS", "GraphQL", "SQL", "Tailwind CSS", "Sass",
+    "Vue", "Angular", "Go", "Java", "C#", "MongoDB"
+  ];
+
   return (
-    <div>
-      <Script id="g-tag-link" strategy="lazyOnload" src={'https://www.googletagmanager.com/gtag/js?id=G-4HM9TML36B'} />
-      <Script id="g-tag-script" strategy="lazyOnload">
-          {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-4HM9TML36B', {
-              page_path: window.location.pathname,
-              });
-          `}
-      </Script>
+    <div className="min-h-screen bg-black text-white selection:bg-purple-500/30">
       <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1" />
-        <title>Eduardo GC</title>
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="https://sn3301files.storage.live.com/y4mVAlAPBqzCKKcVhq_gxzLDd9MPrh_QzMBbMLFaEvnGaYSJzb7dnoW1C3HaHLBugvBw0t_X2MjkKTroKx2ee31pz30mpuI1AZmDb4QD87Il_hENDhLZvRc2GuDJtbg1IwYoM2MeiZA9POSnTFqsran3Y-yTnOjYXZ2kn-jwU8lNYlEy9oN5mCMH_8B-5iQC-PR?width=1920&height=1080&cropmode=none" />
-        <meta property="og:title" content="Eduardo GC" />
+        <title>Eduardo GC | Full Stack Developer & CTO</title>
+        <meta name="description" content={t.hero.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <main className="theme-12 12-theme">
-        <div className="container smartpage-container">
-          <header><img src="https://sat02pap003files.storage.live.com/y4mRINOsH9pAOR6auEavKbgASb7625jW1ElmOEAsGJMYiEBS6_AYvnK52RNUUI79EunqArzTAgrLvdy9KpZWNy3C2jaZPmWsWVAUf6hKfPpT994MK94rjQ3KRYn-GzBzF9Nq6KgB9L3SpUKUKkwZsaPgkP_dEOSsV4XZOnEmwyhM2N9LIvJN9URfHnweKAwPjSZ?width=1920&height=1080&cropmode=none" className="avatar" alt=""
-            title="Eduardo GC" />
-            <div className="bio-title">
-              <h1 align="center">Eduardo GC</h1>
-              <div className="bio-description">
-                <p>Meus links importantes estão aqui!</p>
+
+      <Navbar lang={lang} setLang={setLang} texts={t.nav} />
+
+      <main>
+        {/* --- Hero Section --- */}
+        <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-8 md:px-16 pt-20">
+          {/* Background Glows */}
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[100px] animate-pulse" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] animate-pulse delay-1000" />
+
+          <div className="max-w-5xl mx-auto text-center z-10">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="inline-block py-1 px-3 rounded-full glass text-sm font-medium text-purple-300 mb-6">
+                {t.hero.greeting} Eduardo GC
+              </span>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
+                <span className="gradient-text">Full Stack</span> <br />
+                Developer
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                {t.hero.role}
+              </p>
+
+              <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+                <a href="#projects" className="btn btn-primary text-lg px-8 py-4">
+                  {t.hero.cta}
+                </a>
+                <SocialLinks />
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-gray-500"
+          >
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </motion.div>
+        </section>
+
+        {/* --- About Section --- */}
+        <section id="about" className="section relative px-8 md:px-16">
+          <AnimatedSection>
+            <h2 className="section-title text-center">{t.about.title}</h2>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl mx-auto">
+              <div className="w-48 h-48 md:w-64 md:h-64 relative flex-shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full blur-2xl opacity-50" />
+                <img
+                  src="https://github.com/eduardogc.png"
+                  alt="Eduardo GC"
+                  className="w-full h-full object-cover rounded-full border-2 border-white/10 relative z-10"
+                />
+              </div>
+              <div className="text-center md:text-left">
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  {t.about.description}
+                </p>
+                <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                  {/* Stats or extra info could go here */}
+                </div>
               </div>
             </div>
-          </header>
-          <div className="mt-6 pb-16 lg:pb-0 w-4/5 md:w-1/5 mx-auto flex flex-wrap items-center justify-between">
-          <a className="link" href="https://github.com/eduardogc" data-tippy-content="@github_handle">
-            <svg
-              className="h-6 fill-current text-white hover:text-gray-200"
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>GitHub</title>
-              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-            </svg>
-          </a>
-          <a className="link" href="https://instagram.com/soueduardogc" data-tippy-content="@instagram_handle">
-            <svg
-              className="h-6 fill-current text-white hover:text-gray-200"
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Instagram</title>
-              <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
-            </svg>
-          </a>
-          <a className="link" href="https://www.youtube.com/channel/UC2-FsOpGAR4_Cumpyo30bTQ/" data-tippy-content="@youtube_handle">
-            <svg
-              className="h-6 fill-current text-white hover:text-gray-200"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <title>YouTube</title>
-              <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
-            </svg>
-          </a>
-        </div>
-          <ul className="messengers blocks-num-0"></ul>
-          <ul className="rich-links">
-            <li id="block0" className="links-block">
-              <div className="block-item layout-text"></div>
-              {/* <a href="https://t.me/geceduardo" title="[POR TEMPO LIMITADO] Invista em BDM Digital comigo e receba uma mega bonificação!"
-                className="block-item layout-button" target="_blank">
-                <div className="block-content">
-                  <svg aria-hidden="true" focusable="false" data-prefix="fab"
-                  data-icon="amazon" className="svg-inline--fa fa-amazon fa-w-14 fa-block-icon" role="img"
-                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <path fill="currentColor"
-                    d="M257.2 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56S341 288.9 341 261.4V114.3C341 89 316.5 32 228.7 32 140.7 32 94 87 94 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-49.5 40.7-.1 35.5 29.8 35.5 69.1zm0 86.8c0 80-84.2 68-84.2 17.2 0-47.2 50.5-56.7 84.2-57.8v40.6zm136 163.5c-7.7 10-70 67-174.5 67S34.2 408.5 9.7 379c-6.8-7.7 1-11.3 5.5-8.3C88.5 415.2 203 488.5 387.7 401c7.5-3.7 13.3 2 5.5 12zm39.8 2.2c-6.5 15.8-16 26.8-21.2 31-5.5 4.5-9.5 2.7-6.5-3.8s19.3-46.5 12.7-55c-6.5-8.3-37-4.3-48-3.2-10.8 1-13 2-14-.3-2.3-5.7 21.7-15.5 37.5-17.5 15.7-1.8 41-.8 46 5.7 3.7 5.1 0 27.1-6.5 43.1z">
-                  </path>
-                </svg>
-                <span>[POR TEMPO LIMITADO] Compre BDM Digital com uma mega bonificação!</span></div>
-              </a> */}
-            </li>
-            {/* <li id="block1" className="links-block">
-              <a href="https://amzn.to/3gen8Jz" title="[POR TEMPO LIMITADO] Kindle Preto com desconto!"
-                className="block-item layout-button" target="_blank">
-                <div className="block-content"><svg aria-hidden="true" focusable="false" data-prefix="fab"
-                  data-icon="amazon" className="svg-inline--fa fa-amazon fa-w-14 fa-block-icon" role="img"
-                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <path fill="currentColor"
-                    d="M257.2 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56S341 288.9 341 261.4V114.3C341 89 316.5 32 228.7 32 140.7 32 94 87 94 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-49.5 40.7-.1 35.5 29.8 35.5 69.1zm0 86.8c0 80-84.2 68-84.2 17.2 0-47.2 50.5-56.7 84.2-57.8v40.6zm136 163.5c-7.7 10-70 67-174.5 67S34.2 408.5 9.7 379c-6.8-7.7 1-11.3 5.5-8.3C88.5 415.2 203 488.5 387.7 401c7.5-3.7 13.3 2 5.5 12zm39.8 2.2c-6.5 15.8-16 26.8-21.2 31-5.5 4.5-9.5 2.7-6.5-3.8s19.3-46.5 12.7-55c-6.5-8.3-37-4.3-48-3.2-10.8 1-13 2-14-.3-2.3-5.7 21.7-15.5 37.5-17.5 15.7-1.8 41-.8 46 5.7 3.7 5.1 0 27.1-6.5 43.1z">
-                  </path>
-                </svg><span>[POR TEMPO LIMITADO] Kindle Preto com desconto!</span></div>
-              </a>
-            </li>
-            <li id="block2" className="links-block">
-              <a href="https://amzn.to/3ivOQTD" title="[POR TEMPO LIMITADO] Kindle Branco com desconto!"
-                className="block-item layout-button" target="_blank">
-                <div className="block-content"><svg aria-hidden="true" focusable="false" data-prefix="fab"
-                  data-icon="amazon" className="svg-inline--fa fa-amazon fa-w-14 fa-block-icon" role="img"
-                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <path fill="currentColor"
-                    d="M257.2 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56S341 288.9 341 261.4V114.3C341 89 316.5 32 228.7 32 140.7 32 94 87 94 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-49.5 40.7-.1 35.5 29.8 35.5 69.1zm0 86.8c0 80-84.2 68-84.2 17.2 0-47.2 50.5-56.7 84.2-57.8v40.6zm136 163.5c-7.7 10-70 67-174.5 67S34.2 408.5 9.7 379c-6.8-7.7 1-11.3 5.5-8.3C88.5 415.2 203 488.5 387.7 401c7.5-3.7 13.3 2 5.5 12zm39.8 2.2c-6.5 15.8-16 26.8-21.2 31-5.5 4.5-9.5 2.7-6.5-3.8s19.3-46.5 12.7-55c-6.5-8.3-37-4.3-48-3.2-10.8 1-13 2-14-.3-2.3-5.7 21.7-15.5 37.5-17.5 15.7-1.8 41-.8 46 5.7 3.7 5.1 0 27.1-6.5 43.1z">
-                  </path>
-                </svg><span>[POR TEMPO LIMITADO] Kindle Branco com desconto!</span></div>
-              </a>
-            </li> */}
-            <li id="block3" className="links-block">
-              <div className="block-item layout-text"></div>
-            </li>
-            <li id="block4" className="links-block"><a href="https://youtu.be/YQmWrGF_KKg" target="_blank"
-              title="O GRANDE SEGREDO PARA APRENDER QUALQUER HABILIDADE!"
-              className="block-item layout-card play-button" style={{ backgroundImage: '' }} rel="noreferrer">
-              <div className="button-image"><img src="https://img.youtube.com/vi/YQmWrGF_KKg/maxresdefault.jpg"
-                alt="" /></div>
-              <div className="block-content">
-                <div>O GRANDE SEGREDO PARA APRENDER QUALQUER HABILIDADE!</div>
-              </div>
-            </a></li>
-            <li id="block5" className="links-block">
-              <div className="block-item layout-text">
-                <h2 className="block-title">Mais do canal!</h2>
-              </div>
-            </li>
-            <li id="block6" className="links-block"><a href="https://youtu.be/jTQSRIjUgyE" target="_blank"
-              title="Você ainda faz estimativas? Descubra um método mais confiável!"
-              className="block-item layout-button-thumbnail play-button" style={{ backgroundImage: '' }} rel="noreferrer">
-              <div className="thumbnail"
-                style={{ backgroundImage: 'url(\'https://img.youtube.com/vi/jTQSRIjUgyE/maxresdefault.jpg\')' }}></div>
-              <div className="block-content">
-                <div>Você ainda faz estimativas? Descubra um método mais confiável!</div>
-              </div>
-            </a></li>
-            <li id="block7" className="links-block"><a href="https://youtu.be/E_a3v4FQ82U" target="_blank"
-              title="Os 3 segredos pra aprender qualquer habilidade! | Eduardo GC"
-              className="block-item layout-button-thumbnail play-button" style={{ backgroundImage: '' }} rel="noreferrer">
-              <div className="thumbnail"
-                style={{ backgroundImage: 'url(\'https://img.youtube.com/vi/E_a3v4FQ82U/maxresdefault.jpg\')' }}></div>
-              <div className="block-content">
-                <div>Os 3 segredos pra aprender qualquer habilidade! | Eduardo GC</div>
-              </div>
-            </a></li>
-            <li id="block8" className="links-block"><a href="https://www.youtube.com/watch?v=YQmWrGF_KKg&list=PLIwitEaTf1XiS0uyfHmDP-J8I0-IrDLsm" title="PLAYLIST" target="_blank"
-              className="block-item layout-button-image-bg play-button"
-              style={{ backgroundImage: 'url(\'https://img.youtube.com/vi/YQmWrGF_KKg/maxresdefault.jpg\')' }} rel="noreferrer">
-              <div className="block-content">
-                <div>PLAYLIST</div><strong className="block-label">LIFE HACKS</strong>
-              </div>
-            </a></li>
-            <li id="block9" className="links-block"><a href="https://www.youtube.com/watch?v=HlxzO3m4wlw&list=PLIwitEaTf1XhWhjCqz3S_DQMN7xuMeL03" title="PLAYLIST" target="_blank"
-              className="block-item layout-button-image-bg play-button"
-              style={{ backgroundImage: 'url(\'https://img.youtube.com/vi/HlxzO3m4wlw/maxresdefault.jpg\')' }} rel="noreferrer">
-              <div className="block-content">
-                <div>PLAYLIST</div><strong className="block-label">CARREIRA EM DESENVOLVIMENTO</strong>
-              </div>
-            </a></li>
-            <li id="block10" className="links-block"><a href="https://youtube.com/playlist?list=PLIwitEaTf1XgF8zxFuDrCViDWEkexbsbe" title="PLAYLIST" target="_blank"
-              className="block-item layout-button-image-bg"
-              style={{ backgroundImage: 'url(\'https://i.ytimg.com/vi/iH7jcznbU3c/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&amp;rs=AOn4CLCL0CDOYk_JvqgpEoG_0oHREkn-Vw&amp;days_since_epoch=18786\')' }} rel="noreferrer">
-              <div className="block-content">
-                <div>PLAYLIST</div><strong className="block-label" style={{ backgroundColor: '#ffde59' }}>PRODUTOS
-                  DIGITAIS</strong>
-              </div>
-            </a></li>
-          </ul>
+          </AnimatedSection>
+        </section>
 
-        </div>
+        {/* --- Skills Section --- */}
+        <section id="skills" className="section bg-white/5 relative px-8 md:px-16">
+          <div className="absolute inset-0 bg-black/50" /> {/* Texture overlay */}
+          <div className="relative z-10">
+            <AnimatedSection>
+              <h2 className="section-title text-center text-white">{t.skills.title}</h2>
+              <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+                {skills.map((skill, index) => (
+                  <motion.div
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <SkillBadge name={skill} />
+                  </motion.div>
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
+        {/* --- Experience/Projects Section --- */}
+        <section id="projects" className="section px-8 md:px-16">
+          <div className="max-w-4xl mx-auto">
+            <AnimatedSection>
+              <h2 className="section-title text-center">{t.projects.title}</h2>
+            </AnimatedSection>
+
+            <div className="flex flex-col gap-8">
+              {t.experience.map((xp, index) => (
+                <ExperienceCard key={index} {...xp} index={index} />
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <a
+                href="https://linkedin.com/in/geceduardo"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-secondary"
+              >
+                {t.projects.viewMore}
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* --- Contact Section --- */}
+        <section id="contact" className="section px-8 md:px-16">
+          <AnimatedSection>
+            <div className="glass-strong rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto bg-gradient-to-b from-white/5 to-transparent">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t.contact.title}</h2>
+              <p className="text-xl text-gray-400 mb-10">
+                {t.contact.text}
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:contact@eduardogc.dev" className="btn btn-primary w-full sm:w-auto px-8">
+                  {t.contact.email}
+                </a>
+                <a href="https://linkedin.com/in/geceduardo" target="_blank" rel="noreferrer" className="btn btn-secondary w-full sm:w-auto px-8">
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </AnimatedSection>
+        </section>
       </main>
+
       <Footer />
     </div>
-  )
+  );
 }
