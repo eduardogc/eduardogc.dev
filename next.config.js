@@ -1,7 +1,19 @@
-module.exports = {
-  swcMinify: true,
+const nextConfig = {
   images: {
-    domains: ['eduardogc.tech', 'sat02pap003files.storage.live.com']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'github.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'eduardogc.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'eduardogc.tech',
+      }
+    ],
   },
   webpack: (config) => {
     config.module.rules.push(
@@ -13,3 +25,5 @@ module.exports = {
     return config
   }
 }
+
+module.exports = nextConfig
