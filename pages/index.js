@@ -26,6 +26,20 @@ export default function Home() {
         <meta name="description" content={t.hero.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://eduardogc.com/" />
+        <meta property="og:title" content="Eduardo GC | Full Stack Developer & CTO" />
+        <meta property="og:description" content={t.hero.description} />
+        <meta property="og:image" content="https://github.com/eduardogc.png" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://eduardogc.com/" />
+        <meta property="twitter:title" content="Eduardo GC | Full Stack Developer & CTO" />
+        <meta property="twitter:description" content={t.hero.description} />
+        <meta property="twitter:image" content="https://github.com/eduardogc.png" />
       </Head>
 
       <Navbar lang={lang} setLang={setLang} texts={t.nav} />
