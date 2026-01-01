@@ -25,7 +25,7 @@ export function Navbar({ lang, setLang, texts }) {
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass-strong py-4' : 'bg-transparent py-6'
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <div className="max-w-[1200px] mx-auto px-10 flex items-center justify-between">
                 <a href="#" className="text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
                     Eduardo <span className="gradient-text">GC</span>
                 </a>
@@ -64,10 +64,10 @@ export function Navbar({ lang, setLang, texts }) {
                             {texts.clarion}
                         </a>
                         <a
-                            href="https://google.com"
+                            href="https://guio.eduardogc.com"
                             target="_blank"
                             rel="noreferrer"
-                            className="btn btn-primary py-2 px-4 text-xs"
+                            className="btn btn-primary py-2 px-4 text-xs bg-black hover:bg-zinc-900 border border-zinc-800"
                         >
                             {texts.guio}
                         </a>
@@ -124,10 +124,10 @@ export function Navbar({ lang, setLang, texts }) {
                                 {texts.clarion}
                             </a>
                             <a
-                                href="https://google.com"
+                                href="https://guio.eduardogc.com"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="btn btn-primary py-2 px-6 text-sm"
+                                className="btn btn-primary py-2 px-6 text-sm bg-black hover:bg-zinc-900 border border-zinc-800"
                             >
                                 {texts.guio}
                             </a>

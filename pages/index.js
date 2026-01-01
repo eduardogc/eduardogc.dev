@@ -32,7 +32,7 @@ export default function Home() {
 
       <main>
         {/* --- Hero Section --- */}
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-8 md:px-16 pt-20">
+        <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-12 md:px-24 pt-20">
           {/* Background Glows */}
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[100px] animate-pulse" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] animate-pulse delay-1000" />
@@ -76,7 +76,7 @@ export default function Home() {
         </section>
 
         {/* --- About Section --- */}
-        <section id="about" className="section relative px-8 md:px-16">
+        <section id="about" className="section relative">
           <AnimatedSection>
             <h2 className="section-title text-center">{t.about.title}</h2>
             <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl mx-auto">
@@ -101,7 +101,7 @@ export default function Home() {
         </section>
 
         {/* --- Skills Section --- */}
-        <section id="skills" className="section bg-white/5 relative px-8 md:px-16">
+        <section id="skills" className="section bg-white/5 relative">
           <div className="absolute inset-0 bg-black/50" /> {/* Texture overlay */}
           <div className="relative z-10">
             <AnimatedSection>
@@ -124,7 +124,7 @@ export default function Home() {
         </section>
 
         {/* --- Experience/Projects Section --- */}
-        <section id="projects" className="section px-8 md:px-16">
+        <section id="projects" className="section">
           <div className="max-w-4xl mx-auto">
             <AnimatedSection>
               <h2 className="section-title text-center">{t.projects.title}</h2>
@@ -150,7 +150,7 @@ export default function Home() {
         </section>
 
         {/* --- Contact Section --- */}
-        <section id="contact" className="section px-8 md:px-16">
+        <section id="contact" className="section">
           <AnimatedSection>
             <div className="glass-strong rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto bg-gradient-to-b from-white/5 to-transparent">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">{t.contact.title}</h2>

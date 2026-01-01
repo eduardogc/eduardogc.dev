@@ -14,7 +14,7 @@ export function SocialLinks({ className = "" }) {
         },
         {
             name: 'Instagram',
-            href: 'https://instagram.com/soueduardogc',
+            href: 'https://instagram.com/eusoueududu',
             icon: Icons.Instagram,
         },
         {
