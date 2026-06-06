@@ -26,7 +26,7 @@ export function Navbar({ lang, setLang, texts }) {
                 }`}
         >
             <div className="max-w-[1200px] mx-auto px-10 flex items-center justify-between">
-                <a href="#" className="text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
+                <a href="/" className="text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
                     Eduardo <span className="gradient-text">GC</span>
                 </a>
 
@@ -56,6 +56,12 @@ export function Navbar({ lang, setLang, texts }) {
                             <span>{lang.toUpperCase()}</span>
                         </button>
                         <a
+                            href="/websites"
+                            className="btn btn-primary py-2 px-4 text-xs bg-black hover:bg-zinc-900 border border-zinc-800"
+                        >
+                            {texts.sites}
+                        </a>
+                        <a
                             href="https://clarionestudios.com.br"
                             target="_blank"
                             rel="noreferrer"
@@ -78,6 +84,8 @@ export function Navbar({ lang, setLang, texts }) {
                 <button
                     className="md:hidden text-white"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+                    aria-expanded={mobileMenuOpen}
                 >
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         {mobileMenuOpen ? (
@@ -115,6 +123,13 @@ export function Navbar({ lang, setLang, texts }) {
                             <span>{lang === 'pt' ? 'Mudar para Inglês' : 'Switch to Portuguese'}</span>
                         </button>
                         <div className="flex items-center gap-3">
+                            <a
+                                href="/websites"
+                                className="btn btn-primary py-2 px-6 text-sm bg-black hover:bg-zinc-900 border border-zinc-800"
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
+                                {texts.sites}
+                            </a>
                             <a
                                 href="https://clarionestudios.com.br"
                                 target="_blank"

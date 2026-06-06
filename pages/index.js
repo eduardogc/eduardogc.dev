@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Navbar } from '../components/Navbar';
@@ -44,7 +45,7 @@ export default function Home() {
 
       <Navbar lang={lang} setLang={setLang} texts={t.nav} />
 
-      <main>
+      <main id="main-content">
         {/* --- Hero Section --- */}
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-12 md:px-24 pt-20">
           {/* Background Glows */}
@@ -96,9 +97,11 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl mx-auto">
               <div className="w-48 h-48 md:w-64 md:h-64 relative flex-shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full blur-2xl opacity-50" />
-                <img
+                <Image
                   src="https://github.com/eduardogc.png"
                   alt="Eduardo GC"
+                  width={256}
+                  height={256}
                   className="w-full h-full object-cover rounded-full border-2 border-white/10 relative z-10"
                 />
               </div>
@@ -172,7 +175,10 @@ export default function Home() {
                 {t.contact.text}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="mailto:contact@eduardogc.dev" className="btn btn-primary w-full sm:w-auto px-8">
+                <a href="/websites" className="btn btn-primary w-full sm:w-auto px-8">
+                  {t.contact.sitesCta}
+                </a>
+                <a href="mailto:contact@eduardogc.dev" className="btn btn-secondary w-full sm:w-auto px-8">
                   {t.contact.email}
                 </a>
                 <a href="https://linkedin.com/in/geceduardo" target="_blank" rel="noreferrer" className="btn btn-secondary w-full sm:w-auto px-8">
