@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@netlify/plugin-nextjs": "^5.15.11",
     "clsx": "^2.1.1",
     "motion": "^12.40.0",
     "next": "^16.2.7",
